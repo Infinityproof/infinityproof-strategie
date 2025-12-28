@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategische Entscheidungsanalyse | Infinityproof</title>
+    <meta name="description" content="Fundierte Entscheidungsanalyse für Gründer und Unternehmer – mit der Methodik großer Strategieberatungen, aber zugeschnitten auf kleine Teams und echte Budgets.">
+    <meta name="keywords" content="Entscheidungsanalyse, strategische Entscheidungen, Gründer, Unternehmer, Risikomanagement, Strategieberatung">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Strategische Entscheidungsanalyse | Infinityproof">
+    <meta property="og:description" content="Die Analysemethoden großer Beratungen – für Unternehmer, die echte Entscheidungen treffen müssen.">
+    <meta property="og:type" content="website">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Livvic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Primary Colors - Infinityproof Brand */
+            --olive-dark: #3D4A28;
+            --olive-medium: #8B9A46;
+            --gold: #C4A84B;
+            --gold-light: #D4B85B;
+            
+            /* Neutral Colors */
+            --black: #1a1a1a;
+            --dark-gray: #4a4a4a;
+            --medium-gray: #666;
+            --light-gray: #888;
+            --off-white: #FAFAF8;
+            --warm-white: #F5F5F0;
+            --pure-white: #FFFFFF;
+            
+            /* Transparencies */
+            --olive-transparent: rgba(61, 74, 40, 0.08);
+            --gold-transparent: rgba(196, 168, 75, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            color: var(--black);
+            background-color: var(--off-white);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.25rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(250, 250, 248, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(61, 74, 40, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .logo {
+            font-family: 'Livvic', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.4em;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        
+        .logo .logo-infinity {
+            color: var(--olive-dark);
+        }
+        
+        .logo .logo-proof {
+            color: rgba(61, 74, 40, 0.6);
+        }
+        
+        .nav-cta {
+            background: var(--olive-dark);
+            color: var(--pure-white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-cta:hover {
+            background: var(--olive-medium);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 3rem 6rem;
+            position: relative;
+            background: linear-gradient(135deg, var(--off-white) 0%, var(--warm-white) 100%);
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            border: 1px solid rgba(139, 154, 70, 0.12);
+            pointer-events: none;
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            border: 1px solid rgba(196, 168, 75, 0.1);
+            pointer-events: none;
+            animation: float 25s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(5deg); }
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: var(--olive-transparent);
+            color: var(--olive-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.2rem);
+            color: var(--black);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .hero h1 span {
+            color: var(--olive-dark);
+            position: relative;
+        }
+        
+        .hero h1 span::after {
+            content: '';
+            position: absolute;
+            bottom: 0.1em;
+            left: 0;
+            right: 0;
+            height: 0.15em;
+            background: var(--gold);
+            opacity: 0.4;
+            border-radius: 2px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--medium-gray);
+            max-width: 720px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+        
+        .hero-target-box {
+            background: linear-gradient(135deg, rgba(139, 154, 70, 0.12) 0%, rgba(61, 74, 40, 0.08) 100%);
+            border: 1px solid rgba(139, 154, 70, 0.3);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            max-width: 580px;
+            margin: 0 auto 2rem;
+        }
+        
+        .hero-target-box p {
+            font-size: 1.05rem;
+            color: var(--olive-dark);
+            font-weight: 500;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: var(--olive-dark);
+            color: var(--pure-white);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary:hover {
+            background: var(--olive-medium);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(61, 74, 40, 0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--olive-dark);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            border: 2px solid var(--olive-dark);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--olive-transparent);
+        }
+        
+        /* Pain Points Section */
+        .pain-section {
+            padding: 8rem 3rem;
+            background: var(--pure-white);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+        
+        .section-label {
+            display: inline-block;
+            color: var(--gold);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--black);
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+        
+        .pain-card {
+            background: var(--off-white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(61, 74, 40, 0.06);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pain-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--olive-medium);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .pain-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(61, 74, 40, 0.08);
+        }
+        
+        .pain-card:hover::before {
+            opacity: 1;
+        }
+        
+        .pain-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gold-transparent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .pain-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--olive-dark);
+            stroke-width: 2;
+            fill: none;
+        }
+        
+        .pain-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: var(--black);
+            margin-bottom: 1rem;
+        }
+        
+        .pain-card p {
+            color: var(--medium-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        /* Problem with typical analysis */
+        .problem-section {
+            padding: 6rem 3rem;
+            background: var(--warm-white);
+        }
+        
+        .problem-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .problem-content h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            color: var(--black);
+            margin-bottom: 2rem;
+        }
+        
+        .problem-content p {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+        
+        .problem-content p:last-of-type {
+            margin-bottom: 0;
+        }
+        
+        .problem-list {
+            text-align: left;
+            max-width: 600px;
+            margin: 2rem auto 0;
+        }
+        
+        .problem-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(61, 74, 40, 0.08);
+        }
+        
+        .problem-item:last-child {
+            border-bottom: none;
+        }
+        
+        .problem-icon {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-top: 0.1rem;
+        }
+        
+        .problem-item span {
+            color: var(--dark-gray);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        /* The Cost Section */
+        .cost-section {
+            padding: 8rem 3rem;
+            background: var(--olive-dark);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cost-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .cost-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cost-section .section-label {
+            color: var(--gold);
+        }
+        
+        .cost-section h2 {
+            color: var(--pure-white);
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 2rem;
+        }
+        
+        .cost-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+            line-height: 1.5;
+        }
+        
+        .cost-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .cost-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .cost-item-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .cost-item-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* Solution Section */
+        .solution-section {
+            padding: 8rem 3rem;
+            background: var(--off-white);
+        }
+        
+        .solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        @media (max-width: 900px) {
+            .solution-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+        
+        .solution-content h2 {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            color: var(--black);
+            margin-bottom: 1.5rem;
+        }
+        
+        .solution-content > p {
+            color: var(--medium-gray);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        .solution-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+        
+        .solution-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .feature-check {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            background: var(--olive-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0.15rem;
+        }
+        
+        .feature-check svg {
+            width: 14px;
+            height: 14px;
+            stroke: var(--pure-white);
+            stroke-width: 3;
+        }
+        
+        .solution-feature span {
+            color: var(--dark-gray);
+            font-size: 1rem;
+        }
+        
+        .solution-visual {
+            position: relative;
+        }
+        
+        .visual-card {
+            background: var(--pure-white);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 30px 80px rgba(61, 74, 40, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .visual-card::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            background: var(--gold-transparent);
+            border-radius: 20px;
+            z-index: -1;
+        }
+        
+        .process-step {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid rgba(61, 74, 40, 0.08);
+        }
+        
+        .process-step:last-child {
+            border-bottom: none;
+        }
+        
+        .step-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--olive-medium);
+            opacity: 0.4;
+            min-width: 40px;
+        }
+        
+        .step-content h4 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--black);
+            margin-bottom: 0.25rem;
+        }
+        
+        .step-content p {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            margin: 0;
+        }
+        
+        /* Differentiator Section */
+        .differentiator-section {
+            padding: 8rem 3rem;
+            background: var(--pure-white);
+        }
+        
+        .differentiator-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+        
+        @media (max-width: 900px) {
+            .differentiator-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .differentiator-card {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .differentiator-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--olive-transparent), var(--gold-transparent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--olive-medium);
+        }
+        
+        .differentiator-icon svg {
+            width: 36px;
+            height: 36px;
+            stroke: var(--olive-dark);
+            stroke-width: 1.5;
+            fill: none;
+        }
+        
+        .differentiator-card h3 {
+            font-size: 1.4rem;
+            color: var(--black);
+            margin-bottom: 1rem;
+        }
+        
+        .differentiator-card p {
+            color: var(--medium-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        /* About Section */
+        .about-section {
+            padding: 6rem 3rem;
+            background: var(--warm-white);
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            margin-bottom: 3rem;
+        }
+        
+        @media (max-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+        
+        .about-content h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            color: var(--black);
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-content p {
+            color: var(--medium-gray);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .about-profiles {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .profile-card {
+            background: var(--pure-white);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--olive-medium);
+            box-shadow: 0 4px 20px rgba(61, 74, 40, 0.05);
+        }
+        
+        .profile-role {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--olive-dark);
+            margin-bottom: 0.75rem;
+        }
+        
+        .profile-card p {
+            color: var(--medium-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+        
+        .about-note {
+            background: var(--olive-transparent);
+            padding: 2rem;
+            border-radius: 12px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .about-note p {
+            color: var(--dark-gray);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin: 0;
+            text-align: center;
+        }
+        
+        .about-note strong {
+            color: var(--olive-dark);
+        }
+        
+        /* How It Works */
+        .process-section {
+            padding: 8rem 3rem;
+            background: var(--warm-white);
+        }
+        
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+            position: relative;
+        }
+        
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--olive-medium), var(--gold));
+            opacity: 0.3;
+        }
+        
+        @media (max-width: 900px) {
+            .process-timeline {
+                grid-template-columns: 1fr;
+            }
+            .process-timeline::before {
+                display: none;
+            }
+        }
+        
+        .timeline-step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .timeline-number {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: var(--off-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--olive-dark);
+            border: 2px solid var(--olive-medium);
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-step:hover .timeline-number {
+            background: var(--olive-dark);
+            color: var(--pure-white);
+        }
+        
+        .timeline-step h3 {
+            font-size: 1.25rem;
+            color: var(--black);
+            margin-bottom: 0.75rem;
+        }
+        
+        .timeline-step p {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            line-height: 1.6;
+        }
+        
+        /* What You Get Section */
+        .deliverables-section {
+            padding: 8rem 3rem;
+            background: var(--off-white);
+        }
+        
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        @media (max-width: 900px) {
+            .deliverables-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .deliverable-card {
+            background: var(--pure-white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(61, 74, 40, 0.05);
+            border: 1px solid rgba(61, 74, 40, 0.06);
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+        
+        .deliverable-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(61, 74, 40, 0.12);
+        }
+        
+        .deliverable-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--olive-dark), var(--olive-medium));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .deliverable-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--pure-white);
+            stroke-width: 1.5;
+        }
+        
+        .deliverable-card h3 {
+            font-size: 1.3rem;
+            color: var(--black);
+            margin-bottom: 1rem;
+        }
+        
+        .deliverable-card p {
+            font-size: 0.95rem;
+            color: var(--medium-gray);
+            line-height: 1.7;
+        }
+        
+        /* Trust Section */
+        .trust-section {
+            padding: 6rem 3rem;
+            background: var(--olive-dark);
+            text-align: center;
+        }
+        
+        .trust-content {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+        
+        .trust-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.4rem, 3vw, 1.9rem);
+            color: var(--pure-white);
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        
+        .trust-source {
+            color: var(--gold);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 8rem 3rem;
+            background: var(--warm-white);
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--black);
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-content > p {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+        
+        .cta-form {
+            background: var(--pure-white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(61, 74, 40, 0.08);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.25rem;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--dark-gray);
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(61, 74, 40, 0.15);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: var(--off-white);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--olive-medium);
+            box-shadow: 0 0 0 3px rgba(139, 154, 70, 0.1);
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .form-submit {
+            width: 100%;
+            background: var(--olive-dark);
+            color: var(--pure-white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+        }
+        
+        .form-submit:hover {
+            background: var(--olive-medium);
+        }
+        
+        .form-note {
+            font-size: 0.8rem;
+            color: var(--light-gray);
+            margin-top: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--black);
+            padding: 3rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        
+        .footer-brand {
+            text-align: left;
+        }
+        
+        .footer-logo {
+            font-family: 'Livvic', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.4em;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+        }
+        
+        .logo-infinity {
+            color: var(--pure-white);
+        }
+        
+        .logo-proof {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .footer-text {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        
+        .footer-impressum {
+            text-align: right;
+        }
+        
+        .footer-impressum p {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.8rem;
+            margin: 0.3rem 0;
+        }
+        
+        .footer-impressum strong {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: left;
+            }
+            .footer-impressum {
+                text-align: left;
+                margin-top: 1.5rem;
+                padding-top: 1.5rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-in {
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+        }
+        
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+            
+            .hero, .pain-section, .cost-section, .solution-section, 
+            .process-section, .deliverables-section, .cta-section,
+            .problem-section, .differentiator-section {
+                padding: 5rem 1.5rem;
+            }
+            
+            .pain-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-form {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo"><span class="logo-infinity">INFINITY</span><span class="logo-proof">PROOF</span></a>
+        <a href="#kontakt" class="nav-cta">In Kontakt bleiben</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge animate-in">Für Unternehmer und Gründer</span>
+            <h1 class="animate-in delay-1">Triff deine <span>beste Entscheidung</span></h1>
+            <div class="hero-target-box animate-in delay-2">
+                <p>Für alle, die ein Business führen, wichtige Entscheidungen treffen – und kein ganzes Analyseteam im Rücken haben.</p>
+            </div>
+            <p class="hero-subtitle animate-in delay-2">Wachstum, Einstellung, Investition, Neuausrichtung – die Entscheidungen, die dein Business prägen. Schluss mit Grübeln und dem nagenden Gefühl, etwas zu übersehen. Wir bringen die Analysepower mit – du nur dein Wissen über dein Business. So bekommst du die Klarheit, für die dir allein die Zeit fehlt – und bringst dein Unternehmen dahin, wo du es haben willst.</p>
+            <div class="hero-cta-group animate-in delay-3">
+                <a href="#kontakt" class="btn-primary">
+                    Mehr erfahren
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#prozess" class="btn-secondary">So funktioniert's</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section class="pain-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Die Ausgangslage</span>
+                <h2>Als Unternehmer trägst du das volle Risiko – oft ohne die passenden Werkzeuge</h2>
+                <p>Du stehst vor Entscheidungen, die dein Geschäft prägen werden. Aber zwischen Tagesgeschäft, begrenzten Ressourcen und echter Unsicherheit fehlt oft die Zeit und Struktur für durchdachte Analyse.</p>
+            </div>
+            
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <div class="pain-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <h3>Immer nur reagieren statt gestalten</h3>
+                    <p>Das Tagesgeschäft diktiert den Rhythmus. Du reagierst auf das, was passiert – Chancen, Probleme, Anfragen. Aber wann hast du zuletzt aktiv gestaltet statt nur geantwortet? Wann wirklich nach den besten Möglichkeiten gesucht statt die erstbeste genommen?</p>
+                </div>
+                
+                <div class="pain-card">
+                    <div class="pain-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                    </div>
+                    <h3>Informationen ohne Struktur</h3>
+                    <p>Du hast Daten, Meinungen, Erfahrungswerte – aber kein System, das alles zusammenbringt. Die Suche nach „noch mehr Informationen" verzögert Entscheidungen, ohne sie besser zu machen.</p>
+                </div>
+                
+                <div class="pain-card">
+                    <div class="pain-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 3h18v18H3zM9 9h6v6H9z"/></svg>
+                    </div>
+                    <h3>Nur zwei Optionen sehen</h3>
+                    <p>„Machen oder nicht machen" – diese Denkweise übersieht oft die wirklich guten Alternativen. Ohne systematische Suche bleiben kreative Lösungswege unsichtbar.</p>
+                </div>
+                
+                <div class="pain-card">
+                    <div class="pain-icon">
+                        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    <h3>Kein echter Gesprächspartner</h3>
+                    <p>Mitarbeiter sagen, was du hören willst. Freunde verstehen die Komplexität nicht. Was fehlt: jemand, der deine Annahmen konstruktiv hinterfragt und neue Perspektiven einbringt.</p>
+                </div>
+                
+                <div class="pain-card">
+                    <div class="pain-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>Erfahrung ist wertvoll – aber nicht alles</h3>
+                    <p>Du hast ein gutes Gespür für dein Geschäft entwickelt. Aber bei wirklich neuen Situationen oder wenn viel auf dem Spiel steht, reicht Intuition allein nicht aus.</p>
+                </div>
+                
+                <div class="pain-card">
+                    <div class="pain-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                    </div>
+                    <h3>Gute Beratung ist unerschwinglich</h3>
+                    <p>Strategieberatungen arbeiten für Konzerne mit entsprechenden Budgets. Für kleine Teams und Gründer gibt es kaum Angebote, die methodisch fundiert und gleichzeitig bezahlbar sind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="solution-grid">
+                <div class="solution-content">
+                    <span class="section-label">Unser Ansatz</span>
+                    <h2>Deine Erfahrung, unsere Struktur – zusammen zu besseren Entscheidungen</h2>
+                    <p>Wir ersetzen nicht dein Urteilsvermögen. Wir geben ihm einen Rahmen. Mit bewährten Methoden machen wir sichtbar, was wirklich zählt – angepasst an deine konkrete Situation, deine Werte und deine Ziele.</p>
+                    
+                    <div class="solution-features">
+                        <div class="solution-feature">
+                            <div class="feature-check">
+                                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7"/></svg>
+                            </div>
+                            <span>Aktiv gestalten statt nur auf Gelegenheiten reagieren</span>
+                        </div>
+                        <div class="solution-feature">
+                            <div class="feature-check">
+                                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7"/></svg>
+                            </div>
+                            <span>Komplexe Situationen auf das Wesentliche reduzieren</span>
+                        </div>
+                        <div class="solution-feature">
+                            <div class="feature-check">
+                                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7"/></svg>
+                            </div>
+                            <span>Optionen finden, die du allein nicht gesehen hättest</span>
+                        </div>
+                        <div class="solution-feature">
+                            <div class="feature-check">
+                                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7"/></svg>
+                            </div>
+                            <span>Chancen nicht nur ergreifen, sondern nach deinen Werten optimieren</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="solution-visual">
+                    <div class="visual-card">
+                        <div class="process-step">
+                            <span class="step-number">01</span>
+                            <div class="step-content">
+                                <h4>Verstehen</h4>
+                                <p>Deine Situation, deine Ziele, deine Grenzen</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <span class="step-number">02</span>
+                            <div class="step-content">
+                                <h4>Strukturieren</h4>
+                                <p>Was genau muss entschieden werden?</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <span class="step-number">03</span>
+                            <div class="step-content">
+                                <h4>Durchdenken</h4>
+                                <p>Optionen, Risiken, Chancen</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <span class="step-number">04</span>
+                            <div class="step-content">
+                                <h4>Entscheiden</h4>
+                                <p>Klare Empfehlung, nachvollziehbar begründet</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section" id="prozess">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Der Ablauf</span>
+                <h2>Von der ersten Frage zur fundierten Entscheidung</h2>
+                <p>Jedes Projekt ist anders. Aber der Rahmen ist erprobt – damit nichts Wichtiges übersehen wird und du am Ende weißt, warum du so entscheidest, wie du entscheidest.</p>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="timeline-step">
+                    <div class="timeline-number">1</div>
+                    <h3>Verstehen</h3>
+                    <p>Wir tauchen in deine Situation ein: Was steht wirklich auf dem Spiel? Welche Faktoren sind entscheidend? Was sind deine Ziele und Grenzen?</p>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-number">2</div>
+                    <h3>Strukturieren</h3>
+                    <p>Klarheit schaffen: Was genau muss entschieden werden? Welche Teilentscheidungen gehören dazu? So setzt du deine kostbaren Ressourcen maximal effektiv ein.</p>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-number">3</div>
+                    <h3>Durchdenken</h3>
+                    <p>Welche Optionen gibt es wirklich? Was kann passieren – im besten und im schlechtesten Fall? Was macht den größten Unterschied?</p>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-number">4</div>
+                    <h3>Entscheiden</h3>
+                    <p>Klare Empfehlung mit nachvollziehbarer Begründung. Keine 200-Seiten-Berichte, sondern Ergebnisse, die du sofort nutzen kannst.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deliverables Section -->
+    <section class="deliverables-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Was du bekommst</span>
+                <h2>Ergebnisse, die einen echten Unterschied machen</h2>
+                <p>Klarheit für deine aktuelle Entscheidung – und Denkweisen, die dir auch danach noch nützen.</p>
+            </div>
+            
+            <div class="deliverables-grid">
+                <div class="deliverable-card">
+                    <div class="deliverable-icon">
+                        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                    </div>
+                    <h3>Entscheidungsrahmen</h3>
+                    <p>Eine klare Übersicht: Was wird entschieden, welche Faktoren sind relevant, wie hängen sie mit deinen Zielen zusammen.</p>
+                </div>
+                
+                <div class="deliverable-card">
+                    <div class="deliverable-icon">
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                    </div>
+                    <h3>Die wichtigsten Erkenntnisse</h3>
+                    <p>Worauf kommt es wirklich an? Was macht den größten Unterschied? Welche Annahmen solltest du im Auge behalten? Klar formuliert, direkt anwendbar.</p>
+                </div>
+                
+                <div class="deliverable-card">
+                    <div class="deliverable-icon">
+                        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                    </div>
+                    <h3>Chancen und Risiken</h3>
+                    <p>Was kann schiefgehen – und wie wahrscheinlich ist das? Wo liegen die größten Chancen? Ehrliche Einschätzung statt Wunschdenken.</p>
+                </div>
+                
+                <div class="deliverable-card">
+                    <div class="deliverable-icon">
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+                    </div>
+                    <h3>Entscheidungs-Dokument</h3>
+                    <p>Eine Seite, die alles Wesentliche zusammenfasst. Für dich, für Mitgründer, für Investoren – wer immer es wissen muss.</p>
+                </div>
+                
+                <div class="deliverable-card">
+                    <div class="deliverable-icon">
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <h3>Umsetzungsplan</h3>
+                    <p>Was ist der erste Schritt? Was kann warten? Welche Ereignisse würden die Einschätzung ändern? Ein Fahrplan, nicht nur eine Empfehlung.</p>
+                </div>
+                
+                <div class="deliverable-card">
+                    <div class="deliverable-icon">
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h3>Persönliches Gespräch</h3>
+                    <p>Zeit zum Durchsprechen, Hinterfragen, Weiterdenken. Damit du nicht nur ein Ergebnis bekommst, sondern es wirklich verstehst.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost Section -->
+    <section class="cost-section">
+        <div class="cost-content">
+            <span class="section-label">Was auf dem Spiel steht</span>
+            <h2>Die wahren Kosten aufgeschobener oder schlecht durchdachter Entscheidungen</h2>
+            <p class="cost-quote">„Es geht nicht immer um Geld. Manchmal ist es Zeit, die du nicht zurückbekommst. Chancen, die nicht wiederkommen. Oder der schleichende Preis eines mittelmäßigen Weges."</p>
+            
+            <div class="cost-list">
+                <div class="cost-item">
+                    <div class="cost-item-text">Monate oder Jahre</div>
+                    <div class="cost-item-label">verloren durch falsche Richtungen</div>
+                </div>
+                <div class="cost-item">
+                    <div class="cost-item-text">Verpasste Chancen</div>
+                    <div class="cost-item-label">die nie wiederkommen</div>
+                </div>
+                <div class="cost-item">
+                    <div class="cost-item-text">Teures Nachbessern</div>
+                    <div class="cost-item-label">wenn der Zug erstmal rollt</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Differentiator Section -->
+    <section class="differentiator-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Warum wir</span>
+                <h2>Was uns von anderen Angeboten unterscheidet</h2>
+                <p>Wir kombinieren Dinge, die selten zusammenkommen – und machen daraus ein Angebot, das für kleine Teams wirtschaftlich Sinn ergibt, ohne Abstriche bei der Qualität.</p>
+            </div>
+            
+            <div class="differentiator-grid">
+                <div class="differentiator-card">
+                    <div class="differentiator-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>Bewährte Vorgehensweise</h3>
+                    <p>Die gleichen Methoden, die große Beratungen bei Millionen-Entscheidungen einsetzen – angepasst auf die Realität von Unternehmern. Ohne unnötige Komplexität, aber mit der nötigen Tiefe.</p>
+                </div>
+                
+                <div class="differentiator-card">
+                    <div class="differentiator-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                    </div>
+                    <h3>Smarte Werkzeuge</h3>
+                    <p>Moderne Technologie hilft uns, schneller und gründlicher zu arbeiten – ohne dass der menschliche Blick verloren geht. Du bekommst Qualität, für die andere ein ganzes Team bräuchten.</p>
+                </div>
+                
+                <div class="differentiator-card">
+                    <div class="differentiator-icon">
+                        <svg viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 0 0 0 6.364L12 20.364l7.682-7.682a4.5 4.5 0 0 0-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 0 0-6.364 0z"/></svg>
+                    </div>
+                    <h3>Echte Freude an der Sache</h3>
+                    <p>Was für dich zeitraubende Fleißarbeit ist, ist für uns das Herzstück unserer Arbeit: Strukturen finden, Alternativen durchdenken, Nuancen verstehen. Diese Leidenschaft macht uns effizient – und hält die Kosten im Rahmen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-label">Wer dahinter steht</span>
+                    <h2>Zwei Praktiker mit einer Mission</h2>
+                    <p>Infinityproof entstand, um eine Lücke zu schließen: fundierte Entscheidungsanalyse für Unternehmer, die sich keine Konzernberatung leisten können oder wollen, aber mehr verdienen als gut gemeinte Ratschläge.</p>
+                    <p>Wir sind beide hauptberuflich in verantwortungsvollen Positionen tätig und kennen den Druck, unter dem wichtige Entscheidungen fallen. Infinityproof ist unser Herzensprojekt – geboren aus der Überzeugung, dass gute Analysemethoden nicht den Großen vorbehalten sein sollten.</p>
+                </div>
+                <div class="about-profiles">
+                    <div class="profile-card">
+                        <div class="profile-role">Projektmanagement & Strategie</div>
+                        <p>Rechte Hand des CEOs innerhalb einer Private-Equity-Struktur. Erfahrung darin, strategische Entscheidungen unter Zeitdruck vorzubereiten.</p>
+                    </div>
+                    <div class="profile-card">
+                        <div class="profile-role">Risikomanagement & Analyse</div>
+                        <p>Erfahrener Risikomanager für Unternehmen aus Pharma, Healthcare und Data-Center-Branche mit Investitionsentscheidungen im Milliardenbereich. Jahrelange Erfahrung darin, auch bei hoher Komplexität und Neuartigkeit strukturiert zu analysieren und Erkenntnisse zu liefern.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-note">
+                <p><strong>Unser Ansatz:</strong> Wir haben noch keinen langen Track-Record als Unternehmen – aber jahrelange Erfahrung in den Methoden, die wir anwenden. Unser Ziel ist es, mit unseren Kunden gemeinsam zu wachsen: als verlässlicher Partner, der in unsicheren Zeiten Orientierung gibt und dabei hilft, das Beste aus jeder Situation herauszuholen.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+        <div class="trust-content">
+            <p class="trust-quote">„Das Ergebnis einer Entscheidung lässt sich so gut wie nie vollständig kontrollieren – der Prozess schon. Wir setzen genau dort an: bei der Art, wie Entscheidungen zustande kommen. Das ist der Hebel für nachhaltig bessere Ergebnisse."</p>
+            <p class="trust-source">— Der Gedanke hinter unserer Arbeit</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="kontakt">
+        <div class="cta-content">
+            <span class="section-label">Interesse?</span>
+            <h2>Lass uns in Kontakt bleiben</h2>
+            <p>Ob du gerade vor einer konkreten Entscheidung stehst oder das Thema für die Zukunft im Blick behalten möchtest – trag dich ein und wir melden uns. Unverbindlich, ohne Spam.</p>
+            
+            <form class="cta-form" action="https://formspree.io/f/mzdbvrlw" method="POST">
+                <div class="form-group">
+                    <label for="email">E-Mail-Adresse *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Dein Name (optional)</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="context">Erzähl uns kurz von dir (optional)</label>
+                    <textarea id="context" name="context" placeholder="z.B. Branche, Unternehmensgröße, oder was dich hierher geführt hat..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="interest">Was beschreibt dein Interesse am besten?</label>
+                    <select id="interest" name="interest">
+                        <option value="">— Bitte wählen —</option>
+                        <option value="aktuell">Ich stehe gerade vor einer wichtigen Entscheidung</option>
+                        <option value="bald">In den nächsten Monaten steht etwas an</option>
+                        <option value="zukunft">Aktuell nichts Konkretes, aber das Thema interessiert mich</option>
+                        <option value="austausch">Ich möchte mich einfach mal austauschen</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="situation">Gibt es etwas Bestimmtes, das du uns mitteilen möchtest? (optional)</label>
+                    <textarea id="situation" name="situation" placeholder="Fragen, Anmerkungen, oder ein kurzer Einblick in deine Situation..."></textarea>
+                </div>
+                <input type="hidden" name="_subject" value="Neue Anfrage: Strategische Entscheidungsanalyse">
+                <input type="hidden" name="_next" value="https://infinityproof.de/danke">
+                <button type="submit" class="form-submit">Eintragen</button>
+                <p class="form-note">Wir melden uns persönlich. Kein Newsletter, keine automatisierten Mails.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo"><span class="logo-infinity">INFINITY</span><span class="logo-proof">PROOF</span></div>
+                <p class="footer-text">Klarheit für wichtige Entscheidungen</p>
+                <div class="footer-links">
+                    <a href="https://infinityproof.de">Website</a>
+                    <a href="https://infinityproof.de/datenschutz">Datenschutz</a>
+                </div>
+            </div>
+            <div class="footer-impressum" id="impressum">
+                <p><strong>Infinityproof UG (haftungsbeschränkt)</strong></p>
+                <p>Rauschenbergstr. 4a · 36039 Fulda</p>
+                <p>Handelsregister: HRB 8887 · Amtsgericht Fulda</p>
+                <p>USt-IdNr. gemäß §27a UStG: DE370167179</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Nav background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 2px 20px rgba(61, 74, 40, 0.08)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+        
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.pain-card, .timeline-step, .deliverable-card, .differentiator-card, .problem-item, .profile-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
