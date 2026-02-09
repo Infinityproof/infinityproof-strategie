@@ -33,6 +33,11 @@
             /* Transparencies */
             --olive-transparent: rgba(61, 74, 40, 0.08);
             --gold-transparent: rgba(196, 168, 75, 0.15);
+
+            /* Guarantee green */
+            --guarantee-bg: #edf6f0;
+            --guarantee-border: #c8e6d4;
+            --guarantee-icon: #2d6a4f;
         }
         
         * {
@@ -58,6 +63,17 @@
             font-family: 'Cormorant Garamond', serif;
             font-weight: 500;
             line-height: 1.2;
+        }
+
+        /* ── SCARCITY BAR ── */
+        .scarcity-bar {
+            background: var(--olive-dark);
+            color: var(--pure-white);
+            text-align: center;
+            padding: 10px 24px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
         }
         
         /* Navigation */
@@ -241,6 +257,8 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            border: none;
+            cursor: pointer;
         }
         
         .btn-primary:hover {
@@ -599,7 +617,7 @@
             z-index: -1;
         }
         
-        .process-step {
+        .process-step-card {
             display: flex;
             align-items: center;
             gap: 1.25rem;
@@ -607,11 +625,11 @@
             border-bottom: 1px solid rgba(61, 74, 40, 0.08);
         }
         
-        .process-step:last-child {
+        .process-step-card:last-child {
             border-bottom: none;
         }
         
-        .step-number {
+        .step-number-card {
             font-family: 'Cormorant Garamond', serif;
             font-size: 2rem;
             font-weight: 600;
@@ -634,10 +652,518 @@
             margin: 0;
         }
         
+        /* How It Works */
+        .process-section {
+            padding: 8rem 3rem;
+            background: var(--warm-white);
+        }
+        
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+            position: relative;
+        }
+        
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--olive-medium), var(--gold));
+            opacity: 0.3;
+        }
+        
+        @media (max-width: 900px) {
+            .process-timeline {
+                grid-template-columns: 1fr;
+            }
+            .process-timeline::before {
+                display: none;
+            }
+        }
+        
+        .timeline-step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .timeline-number {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: var(--off-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--olive-dark);
+            border: 2px solid var(--olive-medium);
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-step:hover .timeline-number {
+            background: var(--olive-dark);
+            color: var(--pure-white);
+        }
+        
+        .timeline-step h3 {
+            font-size: 1.25rem;
+            color: var(--black);
+            margin-bottom: 0.75rem;
+        }
+        
+        .timeline-step p {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            line-height: 1.6;
+        }
+        
+        /* ── PACKAGES ── */
+        .packages-section {
+            padding: 8rem 3rem;
+            background: var(--off-white);
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+            align-items: start;
+        }
+
+        @media (max-width: 900px) {
+            .packages-grid {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        .package-card {
+            background: var(--pure-white);
+            border: 1.5px solid rgba(61, 74, 40, 0.1);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .package-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(61, 74, 40, 0.1);
+        }
+
+        .package-card.featured {
+            border-color: var(--olive-dark);
+            box-shadow: 0 0 0 1px var(--olive-dark), 0 20px 60px rgba(61, 74, 40, 0.12);
+        }
+
+        .package-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--olive-dark);
+            color: var(--pure-white);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 5px 20px;
+            border-radius: 100px;
+            white-space: nowrap;
+        }
+
+        .package-name {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--light-gray);
+            margin-bottom: 0.5rem;
+        }
+
+        .package-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+            color: var(--black);
+        }
+
+        .package-desc {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            line-height: 1.6;
+            margin-bottom: 1.75rem;
+            min-height: 56px;
+        }
+
+        .package-price {
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.75rem;
+            border-bottom: 1px solid rgba(61, 74, 40, 0.08);
+        }
+
+        .price-value {
+            font-size: 0.85rem;
+            color: var(--light-gray);
+            text-decoration: line-through;
+            margin-bottom: 4px;
+        }
+
+        .price-amount {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.6rem;
+            font-weight: 600;
+            color: var(--olive-dark);
+            line-height: 1;
+        }
+
+        .price-detail {
+            font-size: 0.8rem;
+            color: var(--light-gray);
+            margin-top: 4px;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .package-features li {
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+            line-height: 1.5;
+        }
+
+        .package-features li::before {
+            content: "✓";
+            font-weight: 700;
+            color: var(--olive-medium);
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .package-features li.inactive {
+            color: var(--light-gray);
+            opacity: 0.5;
+        }
+
+        .package-features li.inactive::before {
+            content: "—";
+            color: var(--light-gray);
+        }
+
+        .package-bonus-divider {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            padding: 0.75rem 0 0.25rem;
+            margin-top: 0.25rem;
+            border-top: 1px dashed rgba(61, 74, 40, 0.12);
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+        }
+
+        .package-bonus-divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: rgba(61, 74, 40, 0.08);
+        }
+
+        .bonus-feature {
+            color: var(--olive-dark) !important;
+        }
+
+        .bonus-feature::before {
+            content: "★" !important;
+            color: var(--gold) !important;
+            font-size: 0.85rem !important;
+        }
+
+        .package-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 0.875rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            cursor: pointer;
+            border: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .package-btn-primary {
+            background: var(--olive-dark);
+            color: var(--pure-white);
+        }
+
+        .package-btn-primary:hover {
+            background: var(--olive-medium);
+            transform: translateY(-2px);
+        }
+
+        .package-btn-outline {
+            background: transparent;
+            color: var(--olive-dark);
+            border: 1.5px solid rgba(61, 74, 40, 0.2);
+        }
+
+        .package-btn-outline:hover {
+            border-color: var(--olive-dark);
+            transform: translateY(-1px);
+        }
+
+        /* ── COMPARISON TABLE ── */
+        .comparison-section {
+            padding: 0 3rem 8rem;
+            background: var(--off-white);
+        }
+
+        .comparison-section .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .comparison-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow-x: auto;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .comparison-table th {
+            text-align: left;
+            padding: 0.875rem 1.25rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+            background: var(--warm-white);
+            border-bottom: 2px solid rgba(61, 74, 40, 0.1);
+        }
+
+        .comparison-table th:not(:first-child) {
+            text-align: center;
+        }
+
+        .comparison-table th.featured-col {
+            background: var(--gold-transparent);
+            color: var(--olive-dark);
+        }
+
+        .comparison-table td {
+            padding: 0.875rem 1.25rem;
+            border-bottom: 1px solid rgba(61, 74, 40, 0.06);
+        }
+
+        .comparison-table td:not(:first-child) {
+            text-align: center;
+        }
+
+        .comparison-table td.featured-col {
+            background: rgba(196, 168, 75, 0.04);
+        }
+
+        .check {
+            color: var(--olive-medium);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .dash {
+            color: var(--light-gray);
+            opacity: 0.4;
+        }
+
+        .table-bonus-separator td {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            background: var(--gold-transparent);
+            padding: 0.625rem 1.25rem;
+            border-bottom: 1px solid rgba(61, 74, 40, 0.06);
+        }
+
+        .bonus-row td:first-child {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .bonus-row td:first-child::before {
+            content: "★";
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.7rem;
+            color: var(--gold);
+        }
+
+        /* ── BONUSES (dark section) ── */
+        .bonuses-section {
+            padding: 8rem 3rem;
+            background: var(--olive-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bonuses-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .bonuses-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .bonuses-section .section-label {
+            color: var(--gold);
+        }
+
+        .bonuses-section .section-header h2 {
+            color: var(--pure-white);
+        }
+
+        .bonuses-section .section-header p {
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .bonuses-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .bonus-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 2.25rem 2rem;
+        }
+
+        .bonus-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            background: rgba(196, 168, 75, 0.15);
+            padding: 4px 12px;
+            border-radius: 100px;
+            margin-bottom: 1rem;
+        }
+
+        .bonus-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--pure-white);
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .bonus-card p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.65);
+            line-height: 1.65;
+        }
+
+        .bonus-value {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        /* ── GUARANTEES ── */
+        .guarantees-section {
+            padding: 8rem 3rem;
+            background: var(--pure-white);
+        }
+
+        .guarantees-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .guarantee-card {
+            background: var(--guarantee-bg);
+            border: 1px solid var(--guarantee-border);
+            border-radius: 16px;
+            padding: 2.25rem 2rem;
+        }
+
+        .guarantee-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--guarantee-icon);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .guarantee-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--black);
+        }
+
+        .guarantee-card p {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            line-height: 1.65;
+        }
+
         /* Differentiator Section */
         .differentiator-section {
             padding: 8rem 3rem;
-            background: var(--pure-white);
+            background: var(--warm-white);
         }
         
         .differentiator-grid {
@@ -693,7 +1219,7 @@
         /* About Section */
         .about-section {
             padding: 6rem 3rem;
-            background: var(--warm-white);
+            background: var(--off-white);
         }
         
         .about-grid {
@@ -772,146 +1298,7 @@
         .about-note strong {
             color: var(--olive-dark);
         }
-        
-        /* How It Works */
-        .process-section {
-            padding: 8rem 3rem;
-            background: var(--warm-white);
-        }
-        
-        .process-timeline {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-top: 4rem;
-            position: relative;
-        }
-        
-        .process-timeline::before {
-            content: '';
-            position: absolute;
-            top: 40px;
-            left: 10%;
-            right: 10%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--olive-medium), var(--gold));
-            opacity: 0.3;
-        }
-        
-        @media (max-width: 900px) {
-            .process-timeline {
-                grid-template-columns: 1fr;
-            }
-            .process-timeline::before {
-                display: none;
-            }
-        }
-        
-        .timeline-step {
-            text-align: center;
-            position: relative;
-        }
-        
-        .timeline-number {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1.5rem;
-            background: var(--off-white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            font-weight: 600;
-            color: var(--olive-dark);
-            border: 2px solid var(--olive-medium);
-            position: relative;
-            z-index: 1;
-            transition: all 0.3s ease;
-        }
-        
-        .timeline-step:hover .timeline-number {
-            background: var(--olive-dark);
-            color: var(--pure-white);
-        }
-        
-        .timeline-step h3 {
-            font-size: 1.25rem;
-            color: var(--black);
-            margin-bottom: 0.75rem;
-        }
-        
-        .timeline-step p {
-            font-size: 0.9rem;
-            color: var(--medium-gray);
-            line-height: 1.6;
-        }
-        
-        /* What You Get Section */
-        .deliverables-section {
-            padding: 8rem 3rem;
-            background: var(--off-white);
-        }
-        
-        .deliverables-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-        
-        @media (max-width: 900px) {
-            .deliverables-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .deliverable-card {
-            background: var(--pure-white);
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 10px 40px rgba(61, 74, 40, 0.05);
-            border: 1px solid rgba(61, 74, 40, 0.06);
-            text-align: center;
-            transition: all 0.4s ease;
-        }
-        
-        .deliverable-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(61, 74, 40, 0.12);
-        }
-        
-        .deliverable-icon {
-            width: 64px;
-            height: 64px;
-            margin: 0 auto 1.5rem;
-            background: linear-gradient(135deg, var(--olive-dark), var(--olive-medium));
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .deliverable-icon svg {
-            width: 32px;
-            height: 32px;
-            stroke: var(--pure-white);
-            stroke-width: 1.5;
-        }
-        
-        .deliverable-card h3 {
-            font-size: 1.3rem;
-            color: var(--black);
-            margin-bottom: 1rem;
-        }
-        
-        .deliverable-card p {
-            font-size: 0.95rem;
-            color: var(--medium-gray);
-            line-height: 1.7;
-        }
-        
+
         /* Trust Section */
         .trust-section {
             padding: 6rem 3rem;
@@ -938,11 +1325,74 @@
             font-size: 0.9rem;
             font-weight: 500;
         }
+
+        /* ── FAQ ── */
+        .faq-section {
+            padding: 8rem 3rem;
+            background: var(--off-white);
+        }
+
+        .faq-list {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(61, 74, 40, 0.1);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 1.5rem 0;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--black);
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.4;
+        }
+
+        .faq-question::after {
+            content: "+";
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--light-gray);
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.open .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.35s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-answer p {
+            font-size: 0.95rem;
+            color: var(--medium-gray);
+            line-height: 1.7;
+        }
         
         /* CTA Section */
         .cta-section {
             padding: 8rem 3rem;
-            background: var(--warm-white);
+            background: var(--off-white);
             text-align: center;
         }
         
@@ -1151,9 +1601,14 @@
             }
             
             .hero, .pain-section, .cost-section, .solution-section, 
-            .process-section, .deliverables-section, .cta-section,
-            .problem-section, .differentiator-section {
+            .process-section, .cta-section,
+            .problem-section, .differentiator-section,
+            .packages-section, .bonuses-section, .guarantees-section, .faq-section {
                 padding: 5rem 1.5rem;
+            }
+
+            .comparison-section {
+                padding: 0 1.5rem 5rem;
             }
             
             .pain-grid {
@@ -1163,14 +1618,32 @@
             .cta-form {
                 padding: 2rem;
             }
+
+            .comparison-table {
+                font-size: 0.8rem;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.625rem 0.75rem;
+            }
+
+            .bonuses-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Scarcity Bar -->
+    <div class="scarcity-bar">
+        Early-Adopter-Preise · Nur für die ersten 20 Kunden · Danach steigen die Preise um 30–50 %
+    </div>
+
     <!-- Navigation -->
     <nav>
         <a href="#" class="logo"><span class="logo-infinity">INFINITY</span><span class="logo-proof">PROOF</span></a>
-        <a href="#kontakt" class="nav-cta">In Kontakt bleiben</a>
+        <a href="#pakete" class="nav-cta">Pakete ansehen</a>
     </nav>
 
     <!-- Hero Section -->
@@ -1183,8 +1656,8 @@
             </div>
             <p class="hero-subtitle animate-in delay-2">Wachstum, Einstellung, Investition, Neuausrichtung – die Entscheidungen, die dein Business prägen. Schluss mit Grübeln und dem nagenden Gefühl, etwas zu übersehen. Wir bringen die Analysepower mit – du nur dein Wissen über dein Business. So bekommst du die Klarheit, für die dir allein die Zeit fehlt – und bringst dein Unternehmen dahin, wo du es haben willst.</p>
             <div class="hero-cta-group animate-in delay-3">
-                <a href="#kontakt" class="btn-primary">
-                    Mehr erfahren
+                <a href="#pakete" class="btn-primary">
+                    Pakete ansehen
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>
@@ -1255,6 +1728,30 @@
         </div>
     </section>
 
+    <!-- Cost Section -->
+    <section class="cost-section">
+        <div class="cost-content">
+            <span class="section-label">Was auf dem Spiel steht</span>
+            <h2>Die wahren Kosten aufgeschobener oder schlecht durchdachter Entscheidungen</h2>
+            <p class="cost-quote">„Es geht nicht immer um Geld. Manchmal ist es Zeit, die du nicht zurückbekommst. Chancen, die nicht wiederkommen. Oder der schleichende Preis eines mittelmäßigen Weges."</p>
+            
+            <div class="cost-list">
+                <div class="cost-item">
+                    <div class="cost-item-text">Monate oder Jahre</div>
+                    <div class="cost-item-label">verloren durch falsche Richtungen</div>
+                </div>
+                <div class="cost-item">
+                    <div class="cost-item-text">Verpasste Chancen</div>
+                    <div class="cost-item-label">die nie wiederkommen</div>
+                </div>
+                <div class="cost-item">
+                    <div class="cost-item-text">Teures Nachbessern</div>
+                    <div class="cost-item-label">wenn der Zug erstmal rollt</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Solution Section -->
     <section class="solution-section">
         <div class="container">
@@ -1294,29 +1791,29 @@
                 
                 <div class="solution-visual">
                     <div class="visual-card">
-                        <div class="process-step">
-                            <span class="step-number">01</span>
+                        <div class="process-step-card">
+                            <span class="step-number-card">01</span>
                             <div class="step-content">
                                 <h4>Verstehen</h4>
                                 <p>Deine Situation, deine Ziele, deine Grenzen</p>
                             </div>
                         </div>
-                        <div class="process-step">
-                            <span class="step-number">02</span>
+                        <div class="process-step-card">
+                            <span class="step-number-card">02</span>
                             <div class="step-content">
                                 <h4>Strukturieren</h4>
                                 <p>Was genau muss entschieden werden?</p>
                             </div>
                         </div>
-                        <div class="process-step">
-                            <span class="step-number">03</span>
+                        <div class="process-step-card">
+                            <span class="step-number-card">03</span>
                             <div class="step-content">
                                 <h4>Durchdenken</h4>
                                 <p>Optionen, Risiken, Chancen</p>
                             </div>
                         </div>
-                        <div class="process-step">
-                            <span class="step-number">04</span>
+                        <div class="process-step-card">
+                            <span class="step-number-card">04</span>
                             <div class="step-content">
                                 <h4>Entscheiden</h4>
                                 <p>Klare Empfehlung, nachvollziehbar begründet</p>
@@ -1362,86 +1859,318 @@
         </div>
     </section>
 
-    <!-- Deliverables Section -->
-    <section class="deliverables-section">
+    <!-- Packages Section -->
+    <section class="packages-section" id="pakete">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Was du bekommst</span>
-                <h2>Ergebnisse, die einen echten Unterschied machen</h2>
-                <p>Klarheit für deine aktuelle Entscheidung – und Denkweisen, die dir auch danach noch nützen.</p>
+                <span class="section-label">Unsere Pakete</span>
+                <h2>Wähle das Paket, das zu deiner Situation passt</h2>
+                <p>Drei Pakete – von „schnelle Klarheit über deine Optionen" bis „vollständige Begleitung inklusive Risikomanagement".</p>
             </div>
-            
-            <div class="deliverables-grid">
-                <div class="deliverable-card">
-                    <div class="deliverable-icon">
-                        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+
+            <div class="packages-grid">
+                <!-- Package 1 -->
+                <div class="package-card">
+                    <div class="package-name">Paket 1</div>
+                    <div class="package-title">Der Strategische Durchbruch</div>
+                    <p class="package-desc">Für Unternehmer, die schnell Klarheit über ihre strategischen Optionen brauchen.</p>
+                    <div class="package-price">
+                        <div class="price-value">Wert: €3.300</div>
+                        <div class="price-amount">€997</div>
+                        <div class="price-detail">Einmalzahlung · zzgl. MwSt.</div>
                     </div>
-                    <h3>Entscheidungsrahmen</h3>
-                    <p>Eine klare Übersicht: Was wird entschieden, welche Faktoren sind relevant, wie hängen sie mit deinen Zielen zusammen.</p>
+                    <ul class="package-features">
+                        <li>Strategisches Startgespräch (1–3 Std.)</li>
+                        <li>Mind. 3 strategische Optionen, ausführlich beschrieben und dokumentiert</li>
+                        <li>Schriftlicher Bericht mit visueller Aufbereitung deiner Alternativen</li>
+                        <li>1× Zwischenabstimmung</li>
+                        <li class="inactive">Bewertung &amp; Analyse der Optionen</li>
+                        <li class="inactive">30 Tage Erreichbarkeit nach Projektende</li>
+                    </ul>
+                    <a href="#kontakt" class="package-btn package-btn-outline">Gespräch vereinbaren</a>
                 </div>
-                
-                <div class="deliverable-card">
-                    <div class="deliverable-icon">
-                        <svg viewBox="0 0 24 24" fill="none"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+
+                <!-- Package 2 (Featured) -->
+                <div class="package-card featured">
+                    <div class="package-badge">Meistgewählt</div>
+                    <div class="package-name">Paket 2</div>
+                    <div class="package-title">Strategische Entscheidungssicherheit</div>
+                    <p class="package-desc">Optionen plus fundierte Bewertung – damit du weißt, welcher Weg der richtige ist.</p>
+                    <div class="package-price">
+                        <div class="price-value">Wert: €12.000+</div>
+                        <div class="price-amount">€4.997</div>
+                        <div class="price-detail">Einmalzahlung · zzgl. MwSt. · Ratenzahlung möglich</div>
                     </div>
-                    <h3>Die wichtigsten Erkenntnisse</h3>
-                    <p>Worauf kommt es wirklich an? Was macht den größten Unterschied? Welche Annahmen solltest du im Auge behalten? Klar formuliert, direkt anwendbar.</p>
+                    <ul class="package-features">
+                        <li>Alles aus „Der Strategische Durchbruch"</li>
+                        <li>Bewertung aller Optionen: Werttreiber, Risiken, Chancen</li>
+                        <li>Report &amp; Infografiken in verständlicher Sprache</li>
+                        <li class="inactive">30 Tage Erreichbarkeit nach Projektende</li>
+                    </ul>
+                    <div class="package-bonus-divider">Bonus-Bausteine</div>
+                    <ul class="package-features">
+                        <li class="bonus-feature">Team-Alignment-Unterlagen für Mitgründer oder Investoren</li>
+                        <li class="bonus-feature">Lebenslang kostenloser Zugang zum KI-Sparringspartner „Advocatus Diaboli" – auch wenn der Zugang für neue Nutzer künftig kostenpflichtig wird</li>
+                    </ul>
+                    <a href="#kontakt" class="package-btn package-btn-primary">Gespräch vereinbaren</a>
                 </div>
-                
-                <div class="deliverable-card">
-                    <div class="deliverable-icon">
-                        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+
+                <!-- Package 3 -->
+                <div class="package-card">
+                    <div class="package-name">Paket 3</div>
+                    <div class="package-title">Entscheidungssicherheit Plus</div>
+                    <p class="package-desc">Vollbegleitung mit Risikomanagement und langfristiger Absicherung – für maximale Entscheidungssicherheit.</p>
+                    <div class="package-price">
+                        <div class="price-value">Wert: €25.000+</div>
+                        <div class="price-amount">€7.997</div>
+                        <div class="price-detail">Einmalzahlung · zzgl. MwSt. · oder 3 × €2.799</div>
                     </div>
-                    <h3>Chancen und Risiken</h3>
-                    <p>Was kann schiefgehen – und wie wahrscheinlich ist das? Wo liegen die größten Chancen? Ehrliche Einschätzung statt Wunschdenken.</p>
-                </div>
-                
-                <div class="deliverable-card">
-                    <div class="deliverable-icon">
-                        <svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
-                    </div>
-                    <h3>Entscheidungs-Dokument</h3>
-                    <p>Eine Seite, die alles Wesentliche zusammenfasst. Für dich, für Mitgründer, für Investoren – wer immer es wissen muss.</p>
-                </div>
-                
-                <div class="deliverable-card">
-                    <div class="deliverable-icon">
-                        <svg viewBox="0 0 24 24" fill="none"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
-                    </div>
-                    <h3>Umsetzungsplan</h3>
-                    <p>Was ist der erste Schritt? Was kann warten? Welche Ereignisse würden die Einschätzung ändern? Ein Fahrplan, nicht nur eine Empfehlung.</p>
-                </div>
-                
-                <div class="deliverable-card">
-                    <div class="deliverable-icon">
-                        <svg viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                    </div>
-                    <h3>Persönliches Gespräch</h3>
-                    <p>Zeit zum Durchsprechen, Hinterfragen, Weiterdenken. Damit du nicht nur ein Ergebnis bekommst, sondern es wirklich verstehst.</p>
+                    <ul class="package-features">
+                        <li>Alles aus „Entscheidungssicherheit"</li>
+                        <li>30 Tage Erreichbarkeit nach Projektende – per E-Mail, WhatsApp oder Telefon. Für neue Gedanken, Rückfragen oder wenn du einfach sparren willst.</li>
+                        <li>Entscheidungs-Notfallkoffer: 3× 60-Min-Calls innerhalb von 12 Monaten – für unvorhergesehene Situationen wie Marktveränderungen, Wettbewerber-Züge oder neue Chancen. Wir greifen deine bereits analysierten Optionen wieder auf.</li>
+                    </ul>
+                    <div class="package-bonus-divider">Bonus-Bausteine</div>
+                    <ul class="package-features">
+                        <li class="bonus-feature">Risikomanagement-Roadmap für dein Unternehmen</li>
+                        <li class="bonus-feature">Entscheidungs-Commitment-System für Solo-Unternehmer</li>
+                        <li class="bonus-feature">Zugang zum Decision-Mastery-Kurs (sobald verfügbar)</li>
+                        <li class="bonus-feature">50 % Rabatt auf künftiges Entscheidungs-Werkzeugset</li>
+                    </ul>
+                    <a href="#kontakt" class="package-btn package-btn-outline">Gespräch vereinbaren</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Cost Section -->
-    <section class="cost-section">
-        <div class="cost-content">
-            <span class="section-label">Was auf dem Spiel steht</span>
-            <h2>Die wahren Kosten aufgeschobener oder schlecht durchdachter Entscheidungen</h2>
-            <p class="cost-quote">„Es geht nicht immer um Geld. Manchmal ist es Zeit, die du nicht zurückbekommst. Chancen, die nicht wiederkommen. Oder der schleichende Preis eines mittelmäßigen Weges."</p>
-            
-            <div class="cost-list">
-                <div class="cost-item">
-                    <div class="cost-item-text">Monate oder Jahre</div>
-                    <div class="cost-item-label">verloren durch falsche Richtungen</div>
+    <!-- Comparison Table -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Auf einen Blick</span>
+                <h2>Was ist in welchem Paket enthalten?</h2>
+            </div>
+            <div class="comparison-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 40%;">Komponente</th>
+                            <th>Durchbruch<br><small style="font-weight:400; color:var(--light-gray)">€997</small></th>
+                            <th class="featured-col">Entscheidungssicherheit<br><small style="font-weight:400; color:var(--olive-dark)">€4.997</small></th>
+                            <th>Plus<br><small style="font-weight:400; color:var(--light-gray)">€7.997</small></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Strategisches Startgespräch</td>
+                            <td><span class="check">✓</span></td>
+                            <td class="featured-col"><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Mind. 3 strategische Optionen</td>
+                            <td><span class="check">✓</span></td>
+                            <td class="featured-col"><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Bewertung &amp; Analyse der Optionen</td>
+                            <td><span class="dash">—</span></td>
+                            <td class="featured-col"><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Report &amp; Infografiken</td>
+                            <td><span class="dash">—</span></td>
+                            <td class="featured-col"><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>30 Tage Erreichbarkeit nach Projektende</td>
+                            <td><span class="dash">—</span></td>
+                            <td class="featured-col"><span class="dash">—</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Entscheidungs-Notfallkoffer: 3× 60-Min-Calls in 12 Monaten</td>
+                            <td><span class="dash">—</span></td>
+                            <td class="featured-col"><span class="dash">—</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr class="table-bonus-separator">
+                            <td colspan="4">Bonus-Bausteine</td>
+                        </tr>
+                        <tr class="bonus-row">
+                            <td>Team-Alignment-Unterlagen</td>
+                            <td><span class="dash">—</span></td>
+                            <td class="featured-col"><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr class="bonus-row">
+                            <td>Lebenslang kostenloser Zugang: KI-Sparringspartner „Advocatus Diaboli"</td>
+                            <td><span class="dash">—</span></td>
+                            <td class="featured-col"><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr class="bonus-row">
+                            <td>Risikomanagement-Roadmap</td>
+                            <td><span class="dash">—</span></td>
+                            <td class="featured-col"><span class="dash">—</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr class="bonus-row">
+                            <td>Entscheidungs-Commitment-System</td>
+                            <td><span class="dash">—</span></td>
+                            <td class="featured-col"><span class="dash">—</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr class="bonus-row">
+                            <td>Decision-Mastery-Kurs (sobald verfügbar)</td>
+                            <td><span class="dash">—</span></td>
+                            <td class="featured-col"><span class="dash">—</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr class="bonus-row">
+                            <td>50 % Rabatt auf Entscheidungs-Werkzeugset</td>
+                            <td><span class="dash">—</span></td>
+                            <td class="featured-col"><span class="dash">—</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Garantien</strong></td>
+                            <td><strong>1</strong></td>
+                            <td class="featured-col"><strong>2</strong></td>
+                            <td><strong>3</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bonuses (Dark) -->
+    <section class="bonuses-section">
+        <div class="bonuses-inner">
+            <div class="section-header">
+                <span class="section-label">Zusätzlich inklusive</span>
+                <h2>Bonus-Bausteine, die den Unterschied machen</h2>
+                <p>Jedes Paket enthält ausgewählte Extras. Die folgenden Bausteine sind ab dem jeweiligen Paket enthalten.</p>
+            </div>
+            <div class="bonuses-grid">
+                <div class="bonus-card">
+                    <div class="bonus-tag">Ab Paket 2</div>
+                    <h3>KI-Sparringspartner „Advocatus Diaboli"</h3>
+                    <p>Dein persönlicher Denkpartner, der deine Pläne und Annahmen gezielt auf den Prüfstand stellt. Lebenslang kostenloser Zugang – auch wenn der Zugang für neue Nutzer künftig kostenpflichtig wird.</p>
                 </div>
-                <div class="cost-item">
-                    <div class="cost-item-text">Verpasste Chancen</div>
-                    <div class="cost-item-label">die nie wiederkommen</div>
+                <div class="bonus-card">
+                    <div class="bonus-tag">Ab Paket 2</div>
+                    <h3>Team-Alignment-Unterlagen</h3>
+                    <p>Dein Mitgründer, Investor oder dein Team soll mitziehen? Aufbereitete Entscheidungsunterlagen, die deine Strategie nachvollziehbar machen.</p>
                 </div>
-                <div class="cost-item">
-                    <div class="cost-item-text">Teures Nachbessern</div>
-                    <div class="cost-item-label">wenn der Zug erstmal rollt</div>
+                <div class="bonus-card">
+                    <div class="bonus-tag">Nur in Paket 3</div>
+                    <h3>Risikomanagement-Roadmap</h3>
+                    <p>Prozessbeschreibung, Rollen &amp; Verantwortlichkeiten, Templates für Frühwarn-Indikatoren. Besonders relevant: Juristische Gesellschaften sind nach StaRUG verpflichtet, ein Frühwarnsystem zu implementieren.</p>
+                    <div class="bonus-value">Spart potenziell 5-stellige Beratungskosten</div>
+                </div>
+                <div class="bonus-card">
+                    <div class="bonus-tag">Nur in Paket 3</div>
+                    <h3>Entscheidungs-Commitment-System</h3>
+                    <p>Speziell für Solo-Unternehmer ohne Team: Ein persönliches Erinnerungs-Framework mit dokumentierter Begründung und quartalsweisen Reflexions-Prompts. Damit du in 6 Monaten noch weißt, warum diese Strategie die richtige war.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantees -->
+    <section class="guarantees-section" id="garantien">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Deine Sicherheit</span>
+                <h2>Du trägst kein Risiko</h2>
+                <p>Wir stehen zu unserer Arbeit. Deshalb geben wir dir nicht eine, sondern bis zu drei Garantien.</p>
+            </div>
+            <div class="guarantees-grid">
+                <div class="guarantee-card">
+                    <div class="guarantee-icon">🛡</div>
+                    <h3>Ruhigen-Gewissens-Garantie</h3>
+                    <p>Nach dem ersten Gespräch nicht überzeugt? Volle Rückerstattung, keine Fragen. Gilt für alle Pakete.</p>
+                </div>
+                <div class="guarantee-card">
+                    <div class="guarantee-icon">🎯</div>
+                    <h3>Entscheidungssicherheits-Garantie</h3>
+                    <p>Keine fundierte Entscheidungsgrundlage nach 30 Tagen? Wir arbeiten kostenlos weiter, bis du Klarheit hast. Ab Paket 2.</p>
+                </div>
+                <div class="guarantee-card">
+                    <div class="guarantee-icon">🔍</div>
+                    <h3>6-Monats-Absicherung</h3>
+                    <p>Wenn innerhalb von 6 Monaten nach abgeschlossener Strategiebewertung etwas passiert, das deine Strategiewahl signifikant beeinflussen könnte – etwa eine Marktveränderung oder ein unerwarteter Wettbewerber-Zug –, bewerten wir deine damaligen Optionen kostenlos neu. Nur in Paket 3.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Häufige Fragen</span>
+                <h2>Alles, was du wissen musst</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">Für wen ist das geeignet?</button>
+                    <div class="faq-answer">
+                        <p>Für Unternehmer, Gründer und Geschäftsführer kleiner bis mittlerer Unternehmen (2–20 Mitarbeiter), die vor einer strategischen Weichenstellung stehen – zum Beispiel Wachstum, Neuausrichtung, große Investitionen oder Skalierungsentscheidungen. Wenn du „Skin in the Game" hast und kein Analyseteam im Rücken, bist du genau richtig.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Wie lange dauert ein Projekt typischerweise?</button>
+                    <div class="faq-answer">
+                        <p>Das hängt vom Paket und der Komplexität ab. Paket 1 kann innerhalb weniger Wochen abgeschlossen sein. Paket 2 und 3 arbeiten wir in der Regel innerhalb von 30 Tagen zum Ergebnis. Die genaue Zeitleiste besprechen wir im Startgespräch.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Was genau muss ich beitragen?</button>
+                    <div class="faq-answer">
+                        <p>Du bringst dein Wissen über dein Unternehmen mit – deine Branche, deine Ziele, deine Werte und Prioritäten. Wir bringen die Struktur und Analysepower. Die meiste Analysearbeit erledigen wir. Du brauchst vor allem Zeit für das Startgespräch, Zwischenabstimmungen und die Ergebnisübergabe.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Welches Paket ist das richtige für mich?</button>
+                    <div class="faq-answer">
+                        <p>Wenn du schnell einen Außenblick brauchst und erst mal wissen willst, welche Optionen es gibt: der Strategische Durchbruch – du bekommst mindestens 3 ausführlich beschriebene Optionen als Bericht. Wenn du nicht nur Optionen, sondern auch eine fundierte Bewertung willst: Entscheidungssicherheit – das ist für die meisten der Sweet Spot. Wenn du GmbH-Geschäftsführer bist oder langfristige Begleitung inklusive Risikomanagement brauchst: Plus. Im Erstgespräch finden wir gemeinsam heraus, was passt.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Wie unterscheidet ihr euch von klassischen Beratungen?</button>
+                    <div class="faq-answer">
+                        <p>Klassische Strategieberatungen arbeiten für Großunternehmen – mit entsprechenden Teams und Budgets. Wir nutzen die gleichen bewährten Methoden, machen sie aber mit modernen Werkzeugen und schlanken Prozessen für Unternehmer zugänglich. Kein Team von 20 Beratern, sondern gezielte Analysepower, die auf deine Situation zugeschnitten ist.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Was ist der „Advocatus Diaboli"?</button>
+                    <div class="faq-answer">
+                        <p>Ein KI-basierter Sparringspartner, den wir selbst entwickelt haben. Er stellt deine Pläne und Annahmen gezielt auf den Prüfstand – wie ein kritischer Berater, der immer verfügbar ist. Als Paket-Kunde bekommst du lebenslang kostenlosen Zugang – auch wenn der Zugang für neue Nutzer künftig kostenpflichtig wird.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Was ist die Risikomanagement-Roadmap in Paket 3?</button>
+                    <div class="faq-answer">
+                        <p>Eine pragmatische Anleitung zur Einführung eines Risikomanagements in deinem Unternehmen – inklusive Prozessbeschreibung, Rollen und Verantwortlichkeiten sowie Templates für die wichtigsten Risiken und Frühwarn-Indikatoren. Besonders relevant, weil juristische Gesellschaften nach dem StaRUG gesetzlich verpflichtet sind, ein Frühwarnsystem zu implementieren – das betrifft auch viele GmbH-Geschäftsführer, die sich damit aus persönlichen Haftungsrisiken herausbewegen.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Was bedeutet „30 Tage Erreichbarkeit" und der „Entscheidungs-Notfallkoffer" in Paket 3?</button>
+                    <div class="faq-answer">
+                        <p>Nach der Ergebnisübergabe bist du 30 Tage lang nicht allein: Du erreichst uns per E-Mail, WhatsApp oder Telefon, wenn neue Gedanken auftauchen, du etwas sparren willst oder Rückfragen hast. Zusätzlich bekommst du den Entscheidungs-Notfallkoffer: drei 60-Minuten-Calls innerhalb von 12 Monaten nach Projektabschluss. Die sind für unvorhergesehene Situationen gedacht – eine Marktveränderung, ein Wettbewerber-Zug, eine neue Chance. Da du ja bereits analysierte Optionen hast, greifen wir diese bei Bedarf einfach wieder auf, statt bei Null zu starten.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Kann ich später auf ein höheres Paket upgraden?</button>
+                    <div class="faq-answer">
+                        <p>Ja. Wenn du mit dem Strategischen Durchbruch startest und danach merkst, dass du auch eine Bewertung willst, kannst du die Differenz zum nächsten Paket zahlen und upgraden.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1616,11 +2345,21 @@
             });
         }, { threshold: 0.1 });
         
-        document.querySelectorAll('.pain-card, .timeline-step, .deliverable-card, .differentiator-card, .problem-item, .profile-card').forEach(el => {
+        document.querySelectorAll('.pain-card, .timeline-step, .differentiator-card, .problem-item, .profile-card, .package-card, .bonus-card, .guarantee-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'all 0.6s ease';
             observer.observe(el);
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const wasOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+                if (!wasOpen) item.classList.add('open');
+            });
         });
     </script>
 </body>
