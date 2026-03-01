@@ -727,6 +727,113 @@
             line-height: 1.6;
         }
         
+        /* ── PREVIEW TEASER ── */
+        .preview-teaser {
+            padding: 5rem 3rem;
+            background: var(--olive-dark);
+            color: #fff;
+        }
+
+        .preview-teaser-inner {
+            max-width: 960px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .preview-teaser .section-label {
+            color: var(--gold-light);
+        }
+
+        .preview-teaser h2 {
+            color: #fff;
+            font-size: clamp(1.4rem, 3vw, 1.9rem);
+            margin: 0.5rem 0 0.75rem;
+        }
+
+        .preview-teaser p {
+            color: rgba(255,255,255,0.55);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .preview-teaser-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--gold);
+            color: var(--olive-dark);
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .preview-teaser-btn:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        .preview-teaser-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .ptv-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 1.1rem 1.25rem;
+        }
+
+        .ptv-label {
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.25rem;
+        }
+
+        .ptv-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+        }
+
+        .ptv-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .ptv-bar {
+            height: 6px;
+            border-radius: 3px;
+            background: linear-gradient(90deg, rgba(123,175,94,0.5), rgba(201,118,90,0.4));
+        }
+
+        .ptv-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+        }
+
+        .ptv-tags span {
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.6);
+        }
+
         /* ── PACKAGES ── */
         .packages-section {
             padding: 8rem 3rem;
@@ -1607,6 +1714,9 @@
                 padding: 5rem 1.5rem;
             }
 
+            .preview-teaser { padding: 3.5rem 1.5rem; }
+            .preview-teaser-inner { grid-template-columns: 1fr; gap: 2rem; }
+
             .comparison-section {
                 padding: 0 1.5rem 5rem;
             }
@@ -1856,6 +1966,46 @@
                     <p>Klare Empfehlung mit nachvollziehbarer Begründung. Keine 200-Seiten-Berichte, sondern Ergebnisse, die du sofort nutzen kannst.</p>
                 </div>
             </div>
+            <div style="text-align:center;margin-top:2.5rem">
+                <a href="beispiel.html" style="color:var(--olive-medium);font-size:0.88rem;text-decoration:none;border-bottom:1px solid rgba(139,154,70,0.3);padding-bottom:2px;transition:all 0.2s">→ Sieh dir ein komplettes Beispielprojekt an</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Example Preview Teaser -->
+    <section class="preview-teaser">
+        <div class="container">
+            <div class="preview-teaser-inner">
+                <div class="preview-teaser-text">
+                    <span class="section-label">Beispielprojekt</span>
+                    <h2>Klingt abstrakt? Sieh es dir an einem Beispiel an.</h2>
+                    <p>Begleite Anna Weber – solo-selbstständige UX-Designerin – durch alle 7 Schritte unserer Analyse. Mit echten Grafiken, konkreten Zahlen und nachvollziehbarer Logik.</p>
+                    <a href="beispiel.html" class="preview-teaser-btn">
+                        Beispiel ansehen
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+                <div class="preview-teaser-visual">
+                    <div class="ptv-card ptv-1">
+                        <div class="ptv-label">Schritt 5</div>
+                        <div class="ptv-title">Einfluss-Analyse</div>
+                        <div class="ptv-bars">
+                            <div class="ptv-bar" style="width: 85%"></div>
+                            <div class="ptv-bar" style="width: 65%"></div>
+                            <div class="ptv-bar" style="width: 40%"></div>
+                        </div>
+                    </div>
+                    <div class="ptv-card ptv-2">
+                        <div class="ptv-label">Schritt 7</div>
+                        <div class="ptv-title">Optimierung</div>
+                        <div class="ptv-tags">
+                            <span>Premium-Preise</span>
+                            <span>1 Senior</span>
+                            <span>Timing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1876,8 +2026,8 @@
                     <p class="package-desc">Für Unternehmer, die schnell Klarheit über ihre strategischen Optionen brauchen.</p>
                     <div class="package-price">
                         <div class="price-value">Wert: €3.300</div>
-                        <div class="price-amount">€997</div>
-                        <div class="price-detail">Einmalzahlung · zzgl. MwSt.</div>
+                        <div class="price-amount">ab €497</div>
+                        <div class="price-detail">zzgl. MwSt. · je nach Anzahl und Komplexität analysierter Optionen</div>
                     </div>
                     <ul class="package-features">
                         <li>Strategisches Startgespräch (1–3 Std.)</li>
@@ -1898,8 +2048,8 @@
                     <p class="package-desc">Optionen plus fundierte Bewertung – damit du weißt, welcher Weg der richtige ist.</p>
                     <div class="package-price">
                         <div class="price-value">Wert: €12.000+</div>
-                        <div class="price-amount">€4.997</div>
-                        <div class="price-detail">Einmalzahlung · zzgl. MwSt. · Ratenzahlung möglich</div>
+                        <div class="price-amount">ab €1.997</div>
+                        <div class="price-detail">zzgl. MwSt. · je nach Anzahl und Komplexität analysierter Optionen</div>
                     </div>
                     <ul class="package-features">
                         <li>Alles aus „Der Strategische Durchbruch"</li>
@@ -1922,8 +2072,8 @@
                     <p class="package-desc">Vollbegleitung mit Risikomanagement und langfristiger Absicherung – für maximale Entscheidungssicherheit.</p>
                     <div class="package-price">
                         <div class="price-value">Wert: €25.000+</div>
-                        <div class="price-amount">€7.997</div>
-                        <div class="price-detail">Einmalzahlung · zzgl. MwSt. · oder 3 × €2.799</div>
+                        <div class="price-amount">ab €3.997</div>
+                        <div class="price-detail">zzgl. MwSt. · je nach Anzahl und Komplexität analysierter Optionen</div>
                     </div>
                     <ul class="package-features">
                         <li>Alles aus „Entscheidungssicherheit"</li>
