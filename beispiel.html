@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beispielprojekt – So arbeiten wir | Infinityproof</title>
-    <meta name="description" content="Unsere Methodik Schritt für Schritt am Beispiel erklärt. 7 Schritte von der Frage zur fundierten Entscheidung.">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Livvic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Beispielprojekt Nachfolge – So arbeiten wir | Infinityproof</title>
+    <meta name="description" content="Unternehmensnachfolge als Entscheidung gedacht. Unsere Methodik Schritt für Schritt am Beispiel erklärt – 7 Schritte von der Frage zur fundierten Übergabe.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Livvic:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --olive-dark: #3D4A28;
-            --olive-medium: #8B9A46;
-            --olive-soft: #A3B25A;
-            --gold: #C4A84B;
-            --gold-light: #D4B85B;
-            --black: #1a1a1a;
+            --olive-dark: #3B5A3E;
+            --olive-medium: #5C7D60;
+            --olive-soft: #7D9A80;
+            --gold: #C4973A;
+            --gold-light: #D4A94B;
+            --black: #2C2C2C;
             --dark-gray: #4a4a4a;
-            --medium-gray: #666;
-            --light-gray: #999;
-            --off-white: #FAFAF8;
-            --warm-white: #F5F5F0;
+            --medium-gray: #5A554F;
+            --light-gray: #8A857F;
+            --off-white: #EDE8DC;
+            --warm-white: #F5F0E8;
             --pure-white: #FFFFFF;
-            --surface-dark: #232B1A;
+            --surface-dark: #2D4430;
             --pos: #7BAF5E;
             --neg: #C9765A;
             --strat-green: #4c8c4a;
@@ -31,7 +31,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             color: var(--black);
             background: var(--warm-white);
             -webkit-font-smoothing: antialiased;
@@ -50,15 +50,15 @@
             padding: 5px 16px;
             border-radius: 100px;
         }
-        .pill--gold { background: rgba(196,168,75,0.15); color: var(--gold); }
-        .pill--olive { background: rgba(61,74,40,0.1); color: var(--olive-dark); }
-        .pill--olive-light { background: rgba(139,154,70,0.12); color: var(--olive-medium); }
+        .pill--gold { background: rgba(196,151,58,0.15); color: var(--gold); }
+        .pill--olive { background: rgba(59,90,62,0.1); color: var(--olive-dark); }
+        .pill--olive-light { background: rgba(92,125,96,0.12); color: var(--olive-medium); }
         .pill--accent { background: var(--gold); color: var(--surface-dark); font-weight: 800; }
 
         /* ═══ INTRO ═══ */
         .intro { padding: 7rem 0 3rem; text-align: center; }
         .intro h2 {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Playfair Display', Georgia, serif;
             font-size: clamp(2rem, 4.5vw, 3rem);
             font-weight: 600;
             color: var(--olive-dark);
@@ -83,7 +83,7 @@
             position: absolute;
             top: -60%; right: -15%;
             width: 220px; height: 220px;
-            background: radial-gradient(circle, rgba(196,168,75,0.1), transparent 70%);
+            background: radial-gradient(circle, rgba(196,151,58,0.1), transparent 70%);
             pointer-events: none;
         }
         .scenario-top { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
@@ -93,10 +93,10 @@
             display: flex; align-items: center; justify-content: center;
             font-size: 1.1rem; color: #fff; font-weight: 700; flex-shrink: 0;
         }
-        .scenario-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: #fff; }
+        .scenario-name { font-family: 'Playfair Display', Georgia, serif; font-size: 1.3rem; font-weight: 600; color: #fff; }
         .scenario-role { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
         .scenario-q {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Playfair Display', Georgia, serif;
             font-size: 1.55rem; font-weight: 600;
             color: var(--gold-light); font-style: italic; line-height: 1.3; margin-bottom: 0.75rem;
         }
@@ -113,7 +113,7 @@
         .step--dark { background: var(--surface-dark); color: #fff; }
 
         .pkg { text-align: center; margin-bottom: 2rem; }
-        .pkg-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600; margin-top: 0.4rem; }
+        .pkg-name { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; font-weight: 600; margin-top: 0.4rem; }
         .step--light .pkg-name, .step--white .pkg-name { color: var(--olive-dark); }
         .step--dark .pkg-name { color: rgba(255,255,255,0.7); }
 
@@ -122,18 +122,18 @@
         .s-head.vis { opacity: 1; transform: translateY(0); }
 
         .s-num {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Playfair Display', Georgia, serif;
             font-size: 1rem; font-weight: 700; letter-spacing: 0.05em;
             margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.6rem;
         }
         .s-num::after { content: ''; flex: 1; max-width: 60px; height: 1px; }
         .step--light .s-num, .step--white .s-num { color: var(--olive-medium); }
-        .step--light .s-num::after, .step--white .s-num::after { background: rgba(139,154,70,0.3); }
+        .step--light .s-num::after, .step--white .s-num::after { background: rgba(92,125,96,0.3); }
         .step--dark .s-num { color: var(--gold); }
-        .step--dark .s-num::after { background: rgba(196,168,75,0.25); }
+        .step--dark .s-num::after { background: rgba(196,151,58,0.25); }
 
         .s-head h3 {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Playfair Display', Georgia, serif;
             font-size: clamp(1.5rem, 3.5vw, 2.1rem);
             font-weight: 600; line-height: 1.15; margin-bottom: 0.5rem;
         }
@@ -155,10 +155,10 @@
 
         .cc-c { padding: 1.4rem 1.5rem; border-radius: 14px; font-size: 0.86rem; line-height: 1.65; }
 
-        .cc-c--old { background: rgba(196,168,75,0.05); border: 1px solid rgba(196,168,75,0.12); }
-        .cc-c--new { background: rgba(61,74,40,0.05); border: 1px solid rgba(61,74,40,0.1); }
-        .step--dark .cc-c--old { background: rgba(196,168,75,0.04); border-color: rgba(196,168,75,0.08); }
-        .step--dark .cc-c--new { background: rgba(139,154,70,0.06); border-color: rgba(139,154,70,0.1); }
+        .cc-c--old { background: rgba(196,151,58,0.05); border: 1px solid rgba(196,151,58,0.12); }
+        .cc-c--new { background: rgba(59,90,62,0.05); border: 1px solid rgba(59,90,62,0.1); }
+        .step--dark .cc-c--old { background: rgba(196,151,58,0.04); border-color: rgba(196,151,58,0.08); }
+        .step--dark .cc-c--new { background: rgba(92,125,96,0.06); border-color: rgba(92,125,96,0.1); }
 
         .cc-lbl { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.45rem; }
         .cc-c--old .cc-lbl { color: var(--gold); }
@@ -172,17 +172,17 @@
 
         .vc {
             background: var(--pure-white);
-            border: 1px solid rgba(61,74,40,0.08);
+            border: 1px solid rgba(59,90,62,0.08);
             border-radius: 18px;
             padding: 2rem 2.25rem 2.25rem;
-            box-shadow: 0 2px 16px rgba(61,74,40,0.04);
+            box-shadow: 0 2px 16px rgba(59,90,62,0.04);
         }
         .step--dark .vc {
             background: rgba(255,255,255,0.03);
             border-color: rgba(255,255,255,0.06);
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
         }
-        .vc h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.12rem; font-weight: 600; margin-bottom: 0.15rem; }
+        .vc h4 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.12rem; font-weight: 600; margin-bottom: 0.15rem; }
         .step--light .vc h4, .step--white .vc h4 { color: var(--olive-dark); }
         .step--dark .vc h4 { color: #fff; }
         .vc-sub { font-size: 0.76rem; margin-bottom: 1.5rem; }
@@ -194,10 +194,10 @@
         .ib.vis { opacity: 1; transform: translateY(0); }
 
         .ins, .unc { padding: 1.2rem 1.4rem; border-radius: 12px; margin-bottom: 0.65rem; font-size: 0.86rem; line-height: 1.65; }
-        .ins { background: rgba(61,74,40,0.04); border-left: 3px solid var(--olive-medium); }
-        .unc { background: rgba(196,168,75,0.05); border-left: 3px solid var(--gold); }
-        .step--dark .ins { background: rgba(139,154,70,0.07); }
-        .step--dark .unc { background: rgba(196,168,75,0.05); }
+        .ins { background: rgba(59,90,62,0.04); border-left: 3px solid var(--olive-medium); }
+        .unc { background: rgba(196,151,58,0.05); border-left: 3px solid var(--gold); }
+        .step--dark .ins { background: rgba(92,125,96,0.07); }
+        .step--dark .unc { background: rgba(196,151,58,0.05); }
 
         .ins-l, .unc-l { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.3rem; }
         .ins-l { color: var(--olive-medium); }
@@ -209,25 +209,25 @@
         /* ═══ STEP 1: HIERARCHY ═══ */
         .hier { display: flex; flex-direction: column; border-radius: 14px; overflow: hidden; }
         .h-lvl { padding: 1.35rem 1.5rem; }
-        .h-set { background: rgba(61,74,40,0.05); }
+        .h-set { background: rgba(59,90,62,0.05); }
         .h-core { background: var(--olive-dark); color: #fff; padding: 1.6rem 1.5rem; }
-        .h-later { background: rgba(61,74,40,0.025); }
+        .h-later { background: rgba(59,90,62,0.025); }
         .h-lbl { font-size: 0.56rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem; }
         .h-set .h-lbl { color: var(--olive-medium); }
         .h-core .h-lbl { color: var(--gold-light); }
         .h-later .h-lbl { color: var(--light-gray); }
         .h-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
         .h-tag { font-size: 0.78rem; padding: 4px 11px; border-radius: 7px; line-height: 1.4; }
-        .h-set .h-tag { background: rgba(61,74,40,0.07); color: var(--dark-gray); }
+        .h-set .h-tag { background: rgba(59,90,62,0.07); color: var(--dark-gray); }
         .h-core .h-tag { background: rgba(255,255,255,0.1); color: #fff; font-weight: 500; }
-        .h-later .h-tag { background: rgba(61,74,40,0.04); color: var(--light-gray); }
+        .h-later .h-tag { background: rgba(59,90,62,0.04); color: var(--light-gray); }
         .h-note { font-size: 0.74rem; margin-top: 0.5rem; font-style: italic; opacity: 0.55; }
 
         /* ═══ STEP 2: STRATEGY TABLE ═══ */
         .st-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 1rem; }
         .st { width: 100%; border-collapse: separate; border-spacing: 0; min-width: 540px; }
-        .st th { font-family: 'Cormorant Garamond', serif; font-size: 0.86rem; font-weight: 600; text-align: left; padding: 0.65rem 0.75rem; border-bottom: 2px solid var(--olive-dark); color: var(--olive-dark); }
-        .st td { font-size: 0.78rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(61,74,40,0.06); color: var(--dark-gray); vertical-align: top; }
+        .st th { font-family: 'Playfair Display', Georgia, serif; font-size: 0.86rem; font-weight: 600; text-align: left; padding: 0.65rem 0.75rem; border-bottom: 2px solid var(--olive-dark); color: var(--olive-dark); }
+        .st td { font-size: 0.78rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(59,90,62,0.06); color: var(--dark-gray); vertical-align: top; }
         .step--dark .st th { color: #fff; border-bottom-color: rgba(255,255,255,0.2); }
         .step--dark .st td { color: rgba(255,255,255,0.6); border-bottom-color: rgba(255,255,255,0.04); }
 
@@ -246,36 +246,36 @@
 
         /* ═══ SVG ═══ */
         .chart { width: 100%; height: auto; display: block; }
-        .ct { font-family: 'Inter', sans-serif; }
+        .ct { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
 
         /* ═══ STEP 7: OPT GRID ═══ */
         .og { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-        .oc { padding: 1.5rem; border-radius: 14px; border: 1px solid rgba(61,74,40,0.08); background: var(--pure-white); }
+        .oc { padding: 1.5rem; border-radius: 14px; border: 1px solid rgba(59,90,62,0.08); background: var(--pure-white); }
         .oc-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem; }
         .oc-icon svg { width: 18px; height: 18px; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-        .oc-icon--info { background: rgba(61,74,40,0.06); }
+        .oc-icon--info { background: rgba(59,90,62,0.06); }
         .oc-icon--info svg { stroke: var(--olive-medium); }
-        .oc-icon--ctrl { background: rgba(196,168,75,0.08); }
+        .oc-icon--ctrl { background: rgba(196,151,58,0.08); }
         .oc-icon--ctrl svg { stroke: var(--gold); }
-        .oc-icon--mix { background: rgba(61,74,40,0.06); }
+        .oc-icon--mix { background: rgba(59,90,62,0.06); }
         .oc-icon--mix svg { stroke: var(--olive-dark); }
-        .oc-icon--time { background: rgba(196,168,75,0.08); }
+        .oc-icon--time { background: rgba(196,151,58,0.08); }
         .oc-icon--time svg { stroke: var(--gold); }
 
-        .oc h5 { font-family: 'Cormorant Garamond', serif; font-size: 1.02rem; font-weight: 600; color: var(--olive-dark); margin-bottom: 0.35rem; }
+        .oc h5 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; font-weight: 600; color: var(--olive-dark); margin-bottom: 0.35rem; }
         .oc > p { font-size: 0.82rem; color: var(--medium-gray); line-height: 1.55; }
-        .oc-ex { margin-top: 0.55rem; padding: 0.55rem 0.8rem; background: rgba(61,74,40,0.03); border-radius: 8px; font-size: 0.78rem; color: var(--dark-gray); line-height: 1.55; font-style: italic; }
+        .oc-ex { margin-top: 0.55rem; padding: 0.55rem 0.8rem; background: rgba(59,90,62,0.03); border-radius: 8px; font-size: 0.78rem; color: var(--dark-gray); line-height: 1.55; font-style: italic; }
 
         /* Derivation */
         .deriv {
             margin-top: 2rem;
             padding: 2rem 2.25rem;
             background: var(--pure-white);
-            border: 1px solid rgba(61,74,40,0.08);
+            border: 1px solid rgba(59,90,62,0.08);
             border-radius: 18px;
-            box-shadow: 0 2px 16px rgba(61,74,40,0.04);
+            box-shadow: 0 2px 16px rgba(59,90,62,0.04);
         }
-        .deriv h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: var(--olive-dark); margin-bottom: 0.5rem; }
+        .deriv h4 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; font-weight: 600; color: var(--olive-dark); margin-bottom: 0.5rem; }
         .deriv > p { font-size: 0.86rem; color: var(--dark-gray); line-height: 1.65; margin-bottom: 1rem; }
 
         .deriv-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
@@ -286,11 +286,11 @@
         .deriv-to { font-size: 0.82rem; color: var(--dark-gray); line-height: 1.5; }
 
         .hyb {
-            background: linear-gradient(135deg, rgba(61,74,40,0.03), rgba(196,168,75,0.07));
-            border: 1px solid rgba(196,168,75,0.2);
+            background: linear-gradient(135deg, rgba(59,90,62,0.03), rgba(196,151,58,0.07));
+            border: 1px solid rgba(196,151,58,0.2);
             border-radius: 16px; padding: 1.75rem; margin-top: 1.25rem;
         }
-        .hyb h5 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--olive-dark); margin: 0.35rem 0 0.25rem; }
+        .hyb h5 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.1rem; font-weight: 600; color: var(--olive-dark); margin: 0.35rem 0 0.25rem; }
         .hyb > p { font-size: 0.84rem; color: var(--dark-gray); line-height: 1.6; }
         .ht { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.6rem; }
         .ht span { font-size: 0.74rem; padding: 3px 9px; border-radius: 5px; font-weight: 500; }
@@ -300,7 +300,7 @@
 
         /* ═══ REPORT ═══ */
         .rpt { text-align: center; margin-top: 3.5rem; }
-        .rpt h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--olive-dark); margin: 0.6rem 0 0.4rem; }
+        .rpt h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; font-weight: 600; color: var(--olive-dark); margin: 0.6rem 0 0.4rem; }
 
         .rpt-preview {
             max-width: 580px;
@@ -321,7 +321,7 @@
             flex-direction: column;
             justify-content: space-between;
             min-height: 310px;
-            box-shadow: 0 12px 40px rgba(35,43,26,0.25);
+            box-shadow: 0 12px 40px rgba(45,68,48,0.25);
             position: relative;
         }
         .rpt-cover::after {
@@ -334,7 +334,7 @@
             opacity: 0.15;
         }
         .rc-logo { font-size: 0.48rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-light); }
-        .rc-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; line-height: 1.25; margin: 1.5rem 0 0.25rem; }
+        .rc-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; font-weight: 600; line-height: 1.25; margin: 1.5rem 0 0.25rem; }
         .rc-sub { font-size: 0.68rem; color: rgba(255,255,255,0.35); line-height: 1.5; }
         .rc-meta { font-size: 0.52rem; color: rgba(255,255,255,0.2); line-height: 1.6; }
 
@@ -343,10 +343,10 @@
 
         .rpt-pg {
             background: var(--pure-white);
-            border: 1px solid rgba(61,74,40,0.08);
+            border: 1px solid rgba(59,90,62,0.08);
             border-radius: 10px;
             padding: 0.9rem 1rem;
-            box-shadow: 0 2px 12px rgba(61,74,40,0.04);
+            box-shadow: 0 2px 12px rgba(59,90,62,0.04);
         }
 
         .rpt-pg-lbl {
@@ -354,11 +354,11 @@
             text-transform: uppercase; color: var(--olive-medium); margin-bottom: 0.35rem;
         }
         .rpt-pg-h {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Playfair Display', Georgia, serif;
             font-size: 0.78rem; font-weight: 600; color: var(--olive-dark); margin-bottom: 0.35rem;
         }
         .rpt-pg-lines { display: flex; flex-direction: column; gap: 2.5px; }
-        .rpt-pg-line { height: 3px; border-radius: 2px; background: rgba(61,74,40,0.06); }
+        .rpt-pg-line { height: 3px; border-radius: 2px; background: rgba(59,90,62,0.06); }
 
         .rpt-pg-mini-bars { display: flex; align-items: flex-end; gap: 3px; height: 22px; margin-top: 0.35rem; }
         .rpt-pg-bar { flex: 1; border-radius: 2px 2px 0 0; }
@@ -370,7 +370,7 @@
         .rpt-pg-quote {
             margin-top: 0.25rem;
             padding: 0.3rem 0.5rem;
-            background: rgba(61,74,40,0.03);
+            background: rgba(59,90,62,0.03);
             border-left: 2px solid var(--olive-medium);
             border-radius: 3px;
         }
@@ -420,7 +420,7 @@
             text-align: center;
         }
         .cta-band h2 {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Playfair Display', Georgia, serif;
             font-size: clamp(1.5rem, 3vw, 2rem);
             font-weight: 600; color: #fff; margin-bottom: 0.5rem;
         }
@@ -448,7 +448,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top: 1px solid rgba(61,74,40,0.08);
+            border-top: 1px solid rgba(59,90,62,0.08);
             font-size: 0.78rem;
             color: var(--light-gray);
         }
@@ -486,22 +486,22 @@
 <!-- ═══ INTRO ═══ -->
 <section class="intro">
     <div class="wrap">
-        <div class="pill pill--gold">Beispielprojekt</div>
+        <div class="pill pill--gold">Beispielprojekt · Nachfolge</div>
         <h2>So arbeiten wir – Schritt für Schritt</h2>
-        <p>Begleite Anna Weber durch unsere Analyse. Damit du siehst, was bei deinem Projekt entsteht.</p>
+        <p>Begleite Klaus Berger durch unsere Analyse. Damit du siehst, was bei deiner Entscheidung entsteht.</p>
 
         <div class="scenario">
             <div class="scenario-top">
-                <div class="scenario-avatar">AW</div>
+                <div class="scenario-avatar">KB</div>
                 <div>
-                    <div class="scenario-name">Anna Weber</div>
-                    <div class="scenario-role">Solo-Selbstständige UX-Designerin</div>
+                    <div class="scenario-name">Klaus Berger</div>
+                    <div class="scenario-role">Inhaber Präzisionstechnik · 18 Mitarbeiter</div>
                 </div>
             </div>
-            <div class="scenario-q">„Soll ich so weitermachen – oder mein Business grundlegend verändern?"</div>
-            <p>Anna ist alleine, macht ~140.000 € Umsatz, ist komplett ausgelastet und lehnt regelmäßig Anfragen ab. Die nächste Stufe fühlt sich riesig an: Team aufbauen? Produkt entwickeln? Oder als Premium-Spezialistin bleiben – nur teurer?</p>
+            <div class="scenario-q">„Wie übergebe ich meinen Betrieb – ohne mein Lebenswerk und meine Absicherung aufs Spiel zu setzen?"</div>
+            <p>Klaus ist 61, Alleininhaber einer Maschinenbau-Firma. Ein gesundheitliches Warnsignal hat ihn aufgerüttelt. Eine Übergabe in der Familie kommt nicht infrage. Ein Verkaufsberater drängt auf den schnellen Verkauf – aber Klaus spürt: Es geht um mehr als den Preis. Um seine Mitarbeiter, sein Lebenswerk, und die Frage, wer er ohne die Firma noch ist.</p>
         </div>
-        <p class="disclaimer">* Fiktives Beispiel zu Illustrationszwecken. Anna Weber ist keine reale Person. Alle Zahlen dienen der Veranschaulichung unserer Methodik.</p>
+        <p class="disclaimer">* Fiktives Beispiel zu Illustrationszwecken. Klaus Berger ist keine reale Person. Alle Zahlen dienen der Veranschaulichung unserer Methodik.</p>
     </div>
 </section>
 
@@ -521,7 +521,7 @@
         <div class="cc" data-a>
             <div class="cc-c cc-c--old">
                 <div class="cc-lbl">Was die meisten tun</div>
-                <p>Direkt über Lösungen sprechen. Die Frage ist <strong>zu eng</strong> (<em>„Soll ich jemanden einstellen?"</em>), <strong>zu breit</strong> (<em>„Wie geht es weiter?"</em>) oder <strong>schwammig</strong> (<em>„Irgendwas muss sich ändern."</em>)</p>
+                <p>Direkt über Lösungen sprechen. Die Frage ist <strong>zu eng</strong> (<em>„An wen verkaufe ich?"</em>), <strong>zu breit</strong> (<em>„Wie sichere ich meinen Ruhestand?"</em>) oder <strong>schwammig</strong> (<em>„Es muss sich was ändern."</em>)</p>
             </div>
             <div class="cc-c cc-c--new">
                 <div class="cc-lbl">Was wir machen</div>
@@ -531,34 +531,35 @@
 
         <div class="vb" data-a>
             <div class="vc">
-                <h4>Entscheidungsrahmen: Anna Weber</h4>
+                <h4>Entscheidungsrahmen: Klaus Berger</h4>
                 <div class="vc-sub">Was steht fest, worum geht es, und was kommt später?</div>
                 <div class="hier">
                     <div class="h-lvl h-set">
                         <div class="h-lbl">Steht fest – Rahmenbedingungen</div>
                         <div class="h-tags">
-                            <span class="h-tag">Max. 80.000 € Investition</span>
-                            <span class="h-tag">Bestandskunden behalten</span>
-                            <span class="h-tag">Kein Investor</span>
+                            <span class="h-tag">Keine Entlassungen</span>
+                            <span class="h-tag">Standort in der Region</span>
+                            <span class="h-tag">Kein Finanzinvestor</span>
+                            <span class="h-tag">Mind. 900.000 € netto</span>
                         </div>
-                        <div class="h-note">→ Wir hinterfragen auch diese: Schränkt eine Annahme die besten Optionen ein?</div>
+                        <div class="h-note">→ Wir hinterfragen auch diese: Ist der Standort wirklich starr – oder geht es eigentlich um die Mitarbeiter?</div>
                     </div>
                     <div class="h-lvl h-core">
                         <div class="h-lbl">Der Kern – hier wird entschieden</div>
                         <div class="h-tags">
-                            <span class="h-tag">Geschäftsmodell</span>
-                            <span class="h-tag">Team oder Solo</span>
-                            <span class="h-tag">Erlösmodell</span>
-                            <span class="h-tag">Preispositionierung</span>
+                            <span class="h-tag">Wer übernimmt?</span>
+                            <span class="h-tag">Bezahlung des Kaufpreises</span>
+                            <span class="h-tag">Betriebsgebäude</span>
+                            <span class="h-tag">Klaus' Rolle danach</span>
                         </div>
-                        <div class="h-note">→ Diese Bereiche hängen zusammen – genau das machen wir sichtbar.</div>
+                        <div class="h-note">→ Diese Bereiche hängen zusammen – ein eigener Mitarbeiter kann den Kaufpreis anders stemmen als ein großes Unternehmen.</div>
                     </div>
                     <div class="h-lvl h-later">
                         <div class="h-lbl">Kommt später – Detailentscheidungen</div>
                         <div class="h-tags">
-                            <span class="h-tag">Büro oder Home Office</span>
-                            <span class="h-tag">Konkrete Tools</span>
-                            <span class="h-tag">Marketing-Kanäle</span>
+                            <span class="h-tag">Kommunikation ans Team</span>
+                            <span class="h-tag">Konkrete Berater</span>
+                            <span class="h-tag">Zeitpunkt der Ansprache</span>
                         </div>
                         <div class="h-note">→ Wichtig, aber erst wenn die Richtung steht.</div>
                     </div>
@@ -567,7 +568,7 @@
         </div>
 
         <div class="ib" data-a>
-            <div class="ins"><div class="ins-l">Erkenntnis</div><p>„Annas eigentliche Frage war nicht ‚Soll ich jemanden einstellen?' – sondern ‚Wie kann ich mehr Wirkung erzielen, ohne mein Leben dem Business unterzuordnen?' Das verändert, welche Optionen überhaupt sichtbar werden."</p></div>
+            <div class="ins"><div class="ins-l">Erkenntnis</div><p>„Klaus' eigentliche Frage war nicht ‚An wen verkaufe ich?' – sondern ‚Welche Nachfolge sichert meine Altersvorsorge UND lässt das Lebenswerk weiterleben, ohne dass ich mich überflüssig fühle?' Das öffnet Optionen, die ein reiner Verkaufsfokus nie sichtbar macht."</p></div>
         </div>
     </div>
 </section>
@@ -596,29 +597,29 @@
 
         <div class="vb" data-a>
             <div class="vc">
-                <h4>Strategietafel: Anna Weber</h4>
-                <div class="vc-sub">Entscheidungsbereiche × Ausprägungen – drei Pfade durch die Möglichkeiten</div>
+                <h4>Die möglichen Wege: Klaus Berger</h4>
+                <div class="vc-sub">Vier Entscheidungen, drei mögliche Wege – so lassen sie sich kombinieren.</div>
                 <div class="st-wrap">
                     <table class="st">
-                        <thead><tr><th>Geschäftsmodell</th><th>Team</th><th>Erlösmodell</th><th>Preisniveau</th></tr></thead>
+                        <thead><tr><th>Wer übernimmt?</th><th>Bezahlung</th><th>Betriebsgebäude</th><th>Klaus danach</th></tr></thead>
                         <tbody>
-                            <tr><td><span class="t t-g">Solo bleiben</span></td><td><span class="t t-g">Alleine</span></td><td><span class="t t-g">Projektbasiert</span></td><td><span class="t t-g">Premium (+40 %)</span></td></tr>
-                            <tr><td><span class="t t-b">Agentur Light</span></td><td><span class="t t-b">2 Junior-Designer</span></td><td><span class="t t-b">Festaufträge + Projekte</span></td><td><span class="t t-b">Marktüblich</span></td></tr>
-                            <tr><td><span class="t t-o">Digitales Produkt</span></td><td><span class="t t-o">Freie Mitarbeiter bei Bedarf</span></td><td><span class="t t-o">Online-Kurs + Vorlagen</span></td><td><span class="t t-o">Skalierbar</span></td></tr>
+                            <tr><td><span class="t t-g">Größeres Unternehmen</span></td><td><span class="t t-g">Sofort komplett</span></td><td><span class="t t-g">Mit verkauft</span></td><td><span class="t t-g">Kompletter Rückzug</span></td></tr>
+                            <tr><td><span class="t t-b">Einzelner Käufer von außen</span></td><td><span class="t t-b">Teils sofort, teils später</span></td><td><span class="t t-b">Behalten & vermieten</span></td><td><span class="t t-b">Kurze Einarbeitung</span></td></tr>
+                            <tr><td><span class="t t-o">Langjähriger Mitarbeiter</span></td><td><span class="t t-o">Überwiegend in Raten</span></td><td><span class="t t-o">Behalten & vermieten</span></td><td><span class="t t-o">Bleibt als Berater</span></td></tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="leg">
-                    <div class="leg-i"><div class="leg-d" style="background:var(--strat-green)"></div> Premium Solo</div>
-                    <div class="leg-i"><div class="leg-d" style="background:var(--strat-blue)"></div> Agentur Light</div>
-                    <div class="leg-i"><div class="leg-d" style="background:var(--strat-orange)"></div> Digitales Produkt</div>
+                    <div class="leg-i"><div class="leg-d" style="background:var(--strat-green)"></div> Verkauf an größeres Unternehmen</div>
+                    <div class="leg-i"><div class="leg-d" style="background:var(--strat-blue)"></div> Verkauf an Einzelkäufer</div>
+                    <div class="leg-i"><div class="leg-d" style="background:var(--strat-orange)"></div> Übergabe an Mitarbeiter</div>
                 </div>
             </div>
         </div>
 
         <div class="ib" data-a>
-            <div class="ins"><div class="ins-l">Erkenntnis</div><p>„Anna hatte nur an ‚Einstellen oder nicht' gedacht. Erst die systematische Aufbereitung machte den Weg zum digitalen Produkt sichtbar – eine Option, die ihr komplett neues Potenzial eröffnet."</p></div>
-            <div class="unc"><div class="unc-l">Umgang mit Unsicherheit</div><p>„Zu diesem Zeitpunkt bewerten wir bewusst noch nichts. Wer zu früh bewertet, verwirft die mutigste Option aus einem Bauchgefühl heraus."</p></div>
+            <div class="ins"><div class="ins-l">Erkenntnis</div><p>„Klaus hatte nur an ‚schnell verkaufen' gedacht. Erst die systematische Aufstellung machte zwei Wege sichtbar, an die er nie gedacht hatte: die Übergabe an einen erfahrenen Mitarbeiter – und die Möglichkeit, das Gebäude zu behalten und zu vermieten, statt es mitzuverkaufen. Aus fünf durchdachten Wegen blieben drei ernsthafte übrig."</p></div>
+            <div class="unc"><div class="unc-l">Umgang mit Unsicherheit</div><p>„Zu diesem Zeitpunkt bewerten wir bewusst noch nichts. Wer zu früh bewertet, verwirft den mutigsten Weg aus einem Bauchgefühl heraus."</p></div>
         </div>
     </div>
 </section>
@@ -639,7 +640,7 @@
         <div class="cc" data-a>
             <div class="cc-c cc-c--old">
                 <div class="cc-lbl">Was die meisten tun</div>
-                <p><em>„130.000 € Zusatzgewinn"</em> – klingt gut. Aber hängt das an einem einzigen optimistischen Faktor? Oder steht der Wert auf soliden Beinen? Die meisten wissen es nicht.</p>
+                <p><em>„Der Betrieb bringt rund 780.000 € netto"</em> – klingt solide. Aber hängt das an einem optimistischen Verkaufspreis? Oder steht der Wert auf mehreren Beinen? Die meisten wissen es nicht.</p>
             </div>
             <div class="cc-c cc-c--new">
                 <div class="cc-lbl">Was wir machen</div>
@@ -649,51 +650,53 @@
 
         <div class="vb" data-a>
             <div class="vc">
-                <h4>Werttreiber: „Agentur Light"</h4>
-                <div class="vc-sub">Woher kommt der Zusatzgewinn? Aufschlüsselung in Tausend Euro.</div>
-                <!-- Waterfall: 0 → +95k → +65k → +20k → -35k → -15k = 130k
-                     Canvas 700×225. More right padding. y_base=190. Scale: 200k=180px → 1k=0.9px
-                     y(v) = 190 - v*0.9 -->
+                <h4>Aufschlüsselung: Verkauf an einen Einzelkäufer</h4>
+                <div class="vc-sub">Woher kommt der Erlös, der am Ende übrig bleibt? Beträge in Tausend Euro.</div>
+                <!-- Waterfall Berger MBI: +1123 +200 -397 -60 -80 = 786k
+                     Canvas 700×225. y_base=190. Scale: 1k=0.11px. Peak (kum.) 1323k≈146px.
+                     y(kum) = 190 - kum*0.11 -->
                 <svg class="chart" viewBox="0 0 700 225">
-                    <line x1="70" y1="190" x2="620" y2="190" stroke="rgba(61,74,40,0.1)" stroke-width="1"/>
+                    <line x1="70" y1="190" x2="620" y2="190" stroke="rgba(59,90,62,0.1)" stroke-width="1"/>
 
-                    <!-- 1: +95k. h=86, top=104 -->
-                    <rect x="80" y="104" width="65" height="86" fill="var(--pos)" rx="4"/>
-                    <text x="112" y="97" class="ct" text-anchor="middle" font-size="10" font-weight="600" fill="var(--olive-dark)">+95k</text>
-                    <text x="112" y="207" class="ct" text-anchor="middle" font-size="9" fill="var(--medium-gray)">Mehr</text>
-                    <text x="112" y="218" class="ct" text-anchor="middle" font-size="8.5" fill="var(--light-gray)">Kapazität</text>
-                    <line x1="145" y1="104" x2="162" y2="104" stroke="rgba(0,0,0,0.06)" stroke-width="1" stroke-dasharray="3 2"/>
+                    <!-- 1: +1123k. h=123, top=67 -->
+                    <rect x="80" y="67" width="65" height="123" fill="var(--pos)" rx="4"/>
+                    <text x="112" y="60" class="ct" text-anchor="middle" font-size="10" font-weight="600" fill="var(--olive-dark)">+1,12 Mio</text>
+                    <text x="112" y="207" class="ct" text-anchor="middle" font-size="9" fill="var(--medium-gray)">Verkaufserlös</text>
+                    <text x="112" y="218" class="ct" text-anchor="middle" font-size="8.5" fill="var(--light-gray)">Betrieb</text>
+                    <line x1="145" y1="67" x2="162" y2="67" stroke="rgba(0,0,0,0.06)" stroke-width="1" stroke-dasharray="3 2"/>
 
-                    <!-- 2: +65k. top=104-59=45, h=59 -->
-                    <rect x="162" y="45" width="65" height="59" fill="var(--pos)" rx="4"/>
-                    <text x="194" y="38" class="ct" text-anchor="middle" font-size="10" font-weight="600" fill="var(--olive-dark)">+65k</text>
-                    <text x="194" y="207" class="ct" text-anchor="middle" font-size="9" fill="var(--medium-gray)">Neue</text>
-                    <text x="194" y="218" class="ct" text-anchor="middle" font-size="8.5" fill="var(--light-gray)">Kunden</text>
+                    <!-- 2: +200k. kum 1323, top=67-22=45, h=22 -->
+                    <rect x="162" y="45" width="65" height="22" fill="var(--pos)" rx="4" opacity="0.7"/>
+                    <text x="194" y="38" class="ct" text-anchor="middle" font-size="10" font-weight="600" fill="var(--olive-dark)">+200k</text>
+                    <text x="194" y="207" class="ct" text-anchor="middle" font-size="9" fill="var(--medium-gray)">Gebäude</text>
+                    <text x="194" y="218" class="ct" text-anchor="middle" font-size="8.5" fill="var(--light-gray)">(Vermietung)</text>
                     <line x1="227" y1="45" x2="244" y2="45" stroke="rgba(0,0,0,0.06)" stroke-width="1" stroke-dasharray="3 2"/>
 
-                    <!-- 3: +20k. top=45-18=27, h=18 -->
-                    <rect x="244" y="27" width="65" height="18" fill="var(--pos)" rx="4" opacity="0.7"/>
-                    <text x="276" y="21" class="ct" text-anchor="middle" font-size="10" font-weight="600" fill="var(--olive-dark)">+20k</text>
-                    <text x="276" y="207" class="ct" text-anchor="middle" font-size="9" fill="var(--medium-gray)">Volumen-</text>
-                    <text x="276" y="218" class="ct" text-anchor="middle" font-size="8.5" fill="var(--light-gray)">effekt</text>
-                    <line x1="309" y1="27" x2="326" y2="27" stroke="rgba(0,0,0,0.06)" stroke-width="1" stroke-dasharray="3 2"/>
+                    <!-- 3: -397k. starts y=45, h=44, ends y=89 (kum 926) -->
+                    <rect x="244" y="45" width="65" height="44" fill="var(--neg)" rx="4"/>
+                    <text x="276" y="38" class="ct" text-anchor="middle" font-size="10" font-weight="600" fill="var(--neg)">−397k</text>
+                    <text x="276" y="207" class="ct" text-anchor="middle" font-size="9" fill="var(--medium-gray)">Steuern &amp;</text>
+                    <text x="276" y="218" class="ct" text-anchor="middle" font-size="8.5" fill="var(--light-gray)">Gebühren</text>
+                    <line x1="309" y1="89" x2="326" y2="89" stroke="rgba(0,0,0,0.06)" stroke-width="1" stroke-dasharray="3 2"/>
 
-                    <!-- 4: -35k. starts y=27, h=32, ends y=59 -->
-                    <rect x="326" y="27" width="65" height="32" fill="var(--neg)" rx="4"/>
-                    <text x="358" y="21" class="ct" text-anchor="middle" font-size="10" font-weight="600" fill="var(--neg)">−35k</text>
-                    <text x="358" y="207" class="ct" text-anchor="middle" font-size="9" fill="var(--medium-gray)">Gehälter</text>
-                    <line x1="391" y1="59" x2="408" y2="59" stroke="rgba(0,0,0,0.06)" stroke-width="1" stroke-dasharray="3 2"/>
+                    <!-- 4: -60k. starts y=89, h=7, ends y=96 (kum 866) -->
+                    <rect x="326" y="89" width="65" height="7" fill="var(--neg)" rx="3" opacity="0.75"/>
+                    <text x="358" y="83" class="ct" text-anchor="middle" font-size="10" font-weight="600" fill="var(--neg)">−60k</text>
+                    <text x="358" y="207" class="ct" text-anchor="middle" font-size="9" fill="var(--medium-gray)">Berater-</text>
+                    <text x="358" y="218" class="ct" text-anchor="middle" font-size="8.5" fill="var(--light-gray)">kosten</text>
+                    <line x1="391" y1="96" x2="408" y2="96" stroke="rgba(0,0,0,0.06)" stroke-width="1" stroke-dasharray="3 2"/>
 
-                    <!-- 5: -15k. starts y=59, h=14, ends y=73 -->
-                    <rect x="408" y="59" width="65" height="14" fill="var(--neg)" rx="4" opacity="0.75"/>
-                    <text x="440" y="53" class="ct" text-anchor="middle" font-size="10" font-weight="600" fill="var(--neg)">−15k</text>
-                    <text x="440" y="207" class="ct" text-anchor="middle" font-size="9" fill="var(--medium-gray)">Overhead</text>
-                    <line x1="473" y1="73" x2="500" y2="73" stroke="rgba(0,0,0,0.06)" stroke-width="1" stroke-dasharray="3 2"/>
+                    <!-- 5: -80k. starts y=96, h=9, ends y=105 (kum 786) -->
+                    <rect x="408" y="96" width="65" height="9" fill="var(--neg)" rx="3" opacity="0.75"/>
+                    <text x="440" y="90" class="ct" text-anchor="middle" font-size="10" font-weight="600" fill="var(--neg)">−80k</text>
+                    <text x="440" y="207" class="ct" text-anchor="middle" font-size="9" fill="var(--medium-gray)">Restschuld</text>
+                    <text x="440" y="218" class="ct" text-anchor="middle" font-size="8.5" fill="var(--light-gray)">Maschine</text>
+                    <line x1="473" y1="105" x2="500" y2="105" stroke="rgba(0,0,0,0.06)" stroke-width="1" stroke-dasharray="3 2"/>
 
-                    <!-- Total: 130k. h=130*0.9=117, top=190-117=73 ✓ -->
-                    <rect x="505" y="73" width="75" height="117" fill="var(--olive-dark)" rx="4"/>
-                    <text x="542" y="65" class="ct" text-anchor="middle" font-size="13" font-weight="700" fill="var(--olive-dark)">130k €</text>
-                    <text x="542" y="207" class="ct" text-anchor="middle" font-size="10" font-weight="600" fill="var(--olive-dark)">Zusatzgewinn</text>
+                    <!-- Total: 786k. h=786*0.11=86, top=190-86=104 -->
+                    <rect x="505" y="104" width="75" height="86" fill="var(--olive-dark)" rx="4"/>
+                    <text x="542" y="96" class="ct" text-anchor="middle" font-size="13" font-weight="700" fill="var(--olive-dark)">786k €</text>
+                    <text x="542" y="207" class="ct" text-anchor="middle" font-size="10" font-weight="600" fill="var(--olive-dark)">Netto-Erlös</text>
 
                     <text x="65" y="194" class="ct" text-anchor="end" font-size="9" fill="var(--light-gray)">0</text>
                 </svg>
@@ -701,7 +704,7 @@
         </div>
 
         <div class="ib" data-a>
-            <div class="ins"><div class="ins-l">Erkenntnis</div><p>„Der größte Hebel ist die zusätzliche Kapazität durch das Team. Aber der zweitgrößte – neue Kunden – ist unsicher. Wenn die Juniors nicht eigenständig liefern können, bricht der gesamte Vorteil weg."</p></div>
+            <div class="ins"><div class="ins-l">Erkenntnis</div><p>„Der Löwenanteil steckt im Unternehmenswert selbst – und der hängt daran, dass die Kunden nach der Übergabe bleiben. Steuern und Kosten sind kalkulierbar. Die eigentliche Wette ist der Verkaufspreis: Beruht er auf einer belastbaren Bewertung – oder auf einer Faustformel?"</p></div>
         </div>
     </div>
 </section>
@@ -720,7 +723,7 @@
         <div class="cc" data-a>
             <div class="cc-c cc-c--old">
                 <div class="cc-lbl">Was die meisten tun</div>
-                <p><em>„A bringt 95k, B bringt 130k – also B."</em> Aber der Vorteil hängt vielleicht an einem einzigen Faktor, der noch völlig unklar ist.</p>
+                <p><em>„Der Verkauf an einen Einzelkäufer bringt 785.000 €, die Übergabe an einen Mitarbeiter 620.000 € – also verkaufen."</em> Aber der Vorteil hängt vielleicht an einem einzigen Faktor, der noch völlig unklar ist.</p>
             </div>
             <div class="cc-c cc-c--new">
                 <div class="cc-lbl">Was wir machen</div>
@@ -730,60 +733,59 @@
 
         <div class="vb" data-a>
             <div class="vc">
-                <h4>Vergleich: „Agentur Light" vs. „Premium Solo"</h4>
-                <div class="vc-sub">Was gewinnt und verliert die Agentur gegenüber dem Solo-Weg?</div>
-                <!-- Delta waterfall: 95k → +55k → +30k → -35k → -15k = 130k
-                     Canvas 700×225. y_base=190. Scale: 180k=175px → 1k≈0.97px
-                     y(v) = 190 - v*0.97 -->
+                <h4>Vergleich: Verkauf an Einzelkäufer ↔ Übergabe an Mitarbeiter</h4>
+                <div class="vc-sub">Was gewinnt und verliert der Verkauf gegenüber der Übergabe an einen Mitarbeiter?</div>
+                <!-- Delta waterfall: Franz 620 → +200 +55 -70 -20 = MBI 785
+                     Canvas 700×225. y_base=190. Scale: 1k≈0.18px. y(kum)=190-kum*0.18 -->
                 <svg class="chart" viewBox="0 0 700 225">
                     <line x1="60" y1="190" x2="600" y2="190" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
 
-                    <!-- Start: 95k. h=92, top=98 -->
-                    <rect x="70" y="98" width="68" height="92" fill="#aaa" rx="4" opacity="0.25"/>
-                    <text x="104" y="91" class="ct" text-anchor="middle" font-size="10.5" fill="rgba(255,255,255,0.4)" font-weight="600">95k €</text>
-                    <text x="104" y="207" class="ct" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.35)">Premium Solo</text>
-                    <line x1="138" y1="98" x2="155" y2="98" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3 2"/>
+                    <!-- Start: Franz 620k. h=112, top=78 -->
+                    <rect x="70" y="78" width="68" height="112" fill="#aaa" rx="4" opacity="0.25"/>
+                    <text x="104" y="71" class="ct" text-anchor="middle" font-size="10.5" fill="rgba(255,255,255,0.4)" font-weight="600">620k €</text>
+                    <text x="104" y="207" class="ct" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.35)">An Mitarbeiter</text>
+                    <line x1="138" y1="78" x2="155" y2="78" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3 2"/>
 
-                    <!-- +55k. h=53, top=98-53=45 -->
-                    <rect x="155" y="45" width="80" height="53" fill="var(--pos)" rx="4"/>
-                    <text x="195" y="38" class="ct" text-anchor="middle" font-size="10" font-weight="600" fill="#b5d89a">+55k</text>
-                    <text x="195" y="207" class="ct" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.35)">Mehr Kapazität</text>
-                    <line x1="235" y1="45" x2="252" y2="45" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3 2"/>
+                    <!-- +200k. kum 820, h=36, top=78-36=42 -->
+                    <rect x="155" y="42" width="80" height="36" fill="var(--pos)" rx="4"/>
+                    <text x="195" y="35" class="ct" text-anchor="middle" font-size="10" font-weight="600" fill="#b5d89a">+200k</text>
+                    <text x="195" y="207" class="ct" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.35)">Höherer Kaufpreis</text>
+                    <line x1="235" y1="42" x2="252" y2="42" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3 2"/>
 
-                    <!-- +30k. h=29, top=45-29=16 -->
-                    <rect x="252" y="16" width="80" height="29" fill="var(--pos)" rx="4" opacity="0.75"/>
-                    <text x="292" y="10" class="ct" text-anchor="middle" font-size="10" font-weight="600" fill="#b5d89a">+30k</text>
-                    <text x="292" y="207" class="ct" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.35)">Neukunden</text>
-                    <line x1="332" y1="16" x2="349" y2="16" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3 2"/>
+                    <!-- +55k. kum 875, h=10, top=42-10=32 -->
+                    <rect x="252" y="32" width="80" height="10" fill="var(--pos)" rx="4" opacity="0.75"/>
+                    <text x="292" y="26" class="ct" text-anchor="middle" font-size="10" font-weight="600" fill="#b5d89a">+55k</text>
+                    <text x="292" y="207" class="ct" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.35)">Kein Zahlungsrisiko</text>
+                    <line x1="332" y1="32" x2="349" y2="32" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3 2"/>
 
-                    <!-- -35k. starts y=16, h=34, ends y=50 -->
-                    <rect x="349" y="16" width="80" height="34" fill="var(--neg)" rx="4"/>
-                    <text x="389" y="10" class="ct" text-anchor="middle" font-size="10" font-weight="600" fill="#e8a090">−35k</text>
-                    <text x="389" y="207" class="ct" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.35)">Gehälter</text>
-                    <line x1="429" y1="50" x2="446" y2="50" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3 2"/>
+                    <!-- -70k. starts y=32, h=13, ends y=45 (kum 805) -->
+                    <rect x="349" y="32" width="80" height="13" fill="var(--neg)" rx="4"/>
+                    <text x="389" y="26" class="ct" text-anchor="middle" font-size="10" font-weight="600" fill="#e8a090">−70k</text>
+                    <text x="389" y="207" class="ct" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.35)">Kundentreue</text>
+                    <line x1="429" y1="45" x2="446" y2="45" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3 2"/>
 
-                    <!-- -15k. starts y=50, h=15, ends y=65 -->
-                    <rect x="446" y="50" width="80" height="15" fill="var(--neg)" rx="4" opacity="0.7"/>
-                    <text x="486" y="44" class="ct" text-anchor="middle" font-size="10" font-weight="600" fill="#e8a090">−15k</text>
-                    <text x="486" y="207" class="ct" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.35)">Overhead</text>
-                    <line x1="526" y1="65" x2="548" y2="65" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3 2"/>
+                    <!-- -20k. starts y=45, h=4, ends y=49 (kum 785) -->
+                    <rect x="446" y="45" width="80" height="4" fill="var(--neg)" rx="3" opacity="0.7"/>
+                    <text x="486" y="39" class="ct" text-anchor="middle" font-size="10" font-weight="600" fill="#e8a090">−20k</text>
+                    <text x="486" y="207" class="ct" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.35)">Mehrkosten</text>
+                    <line x1="526" y1="49" x2="548" y2="49" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3 2"/>
 
-                    <!-- Total: 130k. h=126, top=64 -->
-                    <rect x="548" y="64" width="48" height="126" fill="var(--olive-medium)" rx="4"/>
-                    <text x="572" y="56" class="ct" text-anchor="middle" font-size="12" font-weight="700" fill="#b5d89a">130k €</text>
-                    <text x="572" y="207" class="ct" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.5)" font-weight="600">Agentur</text>
+                    <!-- Total: MBI 785k. h=141, top=49 -->
+                    <rect x="548" y="49" width="48" height="141" fill="var(--olive-medium)" rx="4"/>
+                    <text x="572" y="41" class="ct" text-anchor="middle" font-size="12" font-weight="700" fill="#b5d89a">785k €</text>
+                    <text x="572" y="207" class="ct" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.5)" font-weight="600">Einzelkäufer</text>
 
                     <!-- Delta bracket -->
-                    <line x1="602" y1="64" x2="612" y2="64" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-                    <line x1="602" y1="98" x2="612" y2="98" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-                    <line x1="612" y1="64" x2="612" y2="98" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
-                    <text x="620" y="85" class="ct" text-anchor="start" font-size="10" fill="#b5d89a" font-weight="600">+35k</text>
+                    <line x1="602" y1="49" x2="612" y2="49" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+                    <line x1="602" y1="78" x2="612" y2="78" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+                    <line x1="612" y1="49" x2="612" y2="78" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+                    <text x="620" y="67" class="ct" text-anchor="start" font-size="10" fill="#b5d89a" font-weight="600">+165k</text>
                 </svg>
             </div>
         </div>
 
         <div class="ib" data-a>
-            <div class="ins"><div class="ins-l">Erkenntnis</div><p>„Der Vorteil der Agentur kommt aus zwei Quellen: mehr Kapazität und neue Kunden. Aber die Kosten fressen über die Hälfte des Vorteils. Lohnt sich das Risiko für 35k mehr? Das hängt davon ab, wie sicher die Neukunden wirklich kommen."</p></div>
+            <div class="ins"><div class="ins-l">Erkenntnis</div><p>„Der Verkauf bringt rechnerisch 165.000 € mehr – vor allem, weil ein gut finanzierter Käufer den vollen Preis sofort zahlt, statt einen Teil über Jahre schuldig zu bleiben. Der Haken: Ein eigener Mitarbeiter würde die Kunden treuer halten. Die spannende Frage ist also nicht ‚Wer zahlt mehr?', sondern ‚Wie sicher ist das Geld, das erst später fließt?'"</p></div>
         </div>
     </div>
 </section>
@@ -813,45 +815,44 @@
         <div class="vb" data-a>
             <div class="vc">
                 <h4>Einfluss-Analyse: Was bewegt das Ergebnis?</h4>
-                <div class="vc-sub">Je breiter der Balken, desto größer der Einfluss. Basiswert: 130k €</div>
-                <!-- Tornado. Center x=370 (130k). Scale: 70k=95px → 1k≈1.357px
-                     Widened viewBox to 700 for breathing room -->
+                <div class="vc-sub">Je breiter der Balken, desto stärker verschiebt diese eine Unsicherheit das Ergebnis. Ausgangswert: 785.000 € – was am Ende für Klaus übrig bleibt.</div>
+                <!-- Tornado. Center x=370 (785k). Scale: 1k≈0.6px -->
                 <svg class="chart" viewBox="0 0 700 230">
                     <line x1="370" y1="10" x2="370" y2="175" stroke="var(--olive-dark)" stroke-width="1.5"/>
-                    <text x="370" y="6" class="ct" text-anchor="middle" font-size="8.5" fill="var(--olive-dark)" font-weight="600">Basis: 130k €</text>
+                    <text x="370" y="6" class="ct" text-anchor="middle" font-size="8.5" fill="var(--olive-dark)" font-weight="600">Basis: 785k €</text>
 
-                    <!-- 1: Qualität Juniors [60k–195k] → -70k (95px), +65k (88px) -->
-                    <text x="165" y="42" class="ct" text-anchor="end" font-size="10.5" fill="var(--dark-gray)" font-weight="500">Qualität der Juniors</text>
-                    <rect x="275" y="28" width="95" height="23" fill="var(--neg)" rx="4" opacity="0.8"/>
-                    <rect x="370" y="28" width="88" height="23" fill="var(--pos)" rx="4" opacity="0.8"/>
-                    <text x="268" y="44" class="ct" text-anchor="end" font-size="9" fill="var(--medium-gray)">60k</text>
-                    <text x="465" y="44" class="ct" text-anchor="start" font-size="9" fill="var(--medium-gray)">195k</text>
+                    <!-- 1: Bewertungsmultiple [620k–980k] → -165k (99px), +195k (117px) -->
+                    <text x="165" y="42" class="ct" text-anchor="end" font-size="10.5" fill="var(--dark-gray)" font-weight="500">Künftige Auftragslage</text>
+                    <rect x="271" y="28" width="99" height="23" fill="var(--neg)" rx="4" opacity="0.8"/>
+                    <rect x="370" y="28" width="117" height="23" fill="var(--pos)" rx="4" opacity="0.8"/>
+                    <text x="264" y="44" class="ct" text-anchor="end" font-size="9" fill="var(--medium-gray)">620k</text>
+                    <text x="494" y="44" class="ct" text-anchor="start" font-size="9" fill="var(--medium-gray)">980k</text>
 
-                    <!-- 2: Neukundengewinnung [80k–175k] → -50k (68px), +45k (61px) -->
-                    <text x="165" y="84" class="ct" text-anchor="end" font-size="10.5" fill="var(--dark-gray)" font-weight="500">Neukundengewinnung</text>
-                    <rect x="302" y="70" width="68" height="23" fill="var(--neg)" rx="4" opacity="0.7"/>
-                    <rect x="370" y="70" width="61" height="23" fill="var(--pos)" rx="4" opacity="0.7"/>
-                    <text x="295" y="86" class="ct" text-anchor="end" font-size="9" fill="var(--medium-gray)">80k</text>
-                    <text x="438" y="86" class="ct" text-anchor="start" font-size="9" fill="var(--medium-gray)">175k</text>
+                    <!-- 2: Kundenbindung [690k–880k] → -95k (57px), +95k (57px) -->
+                    <text x="165" y="84" class="ct" text-anchor="end" font-size="10.5" fill="var(--dark-gray)" font-weight="500">Kundentreue nach Übergabe</text>
+                    <rect x="313" y="70" width="57" height="23" fill="var(--neg)" rx="4" opacity="0.7"/>
+                    <rect x="370" y="70" width="57" height="23" fill="var(--pos)" rx="4" opacity="0.7"/>
+                    <text x="306" y="86" class="ct" text-anchor="end" font-size="9" fill="var(--medium-gray)">690k</text>
+                    <text x="434" y="86" class="ct" text-anchor="start" font-size="9" fill="var(--medium-gray)">880k</text>
 
-                    <!-- 3: Bestandskunden-Bindung [95k–160k] → -35k (48px), +30k (41px) -->
-                    <text x="165" y="126" class="ct" text-anchor="end" font-size="10.5" fill="var(--dark-gray)" font-weight="500">Bestandskunden-Bindung</text>
-                    <rect x="322" y="112" width="48" height="23" fill="var(--neg)" rx="4" opacity="0.6"/>
-                    <rect x="370" y="112" width="41" height="23" fill="var(--pos)" rx="4" opacity="0.6"/>
-                    <text x="315" y="128" class="ct" text-anchor="end" font-size="9" fill="var(--medium-gray)">95k</text>
-                    <text x="418" y="128" class="ct" text-anchor="start" font-size="9" fill="var(--medium-gray)">160k</text>
+                    <!-- 3: Käufer & Finanzierung [710k–850k] → -75k (45px), +65k (39px) -->
+                    <text x="165" y="126" class="ct" text-anchor="end" font-size="10.5" fill="var(--dark-gray)" font-weight="500">Käufer &amp; Finanzierung</text>
+                    <rect x="325" y="112" width="45" height="23" fill="var(--neg)" rx="4" opacity="0.6"/>
+                    <rect x="370" y="112" width="39" height="23" fill="var(--pos)" rx="4" opacity="0.6"/>
+                    <text x="318" y="128" class="ct" text-anchor="end" font-size="9" fill="var(--medium-gray)">710k</text>
+                    <text x="416" y="128" class="ct" text-anchor="start" font-size="9" fill="var(--medium-gray)">850k</text>
 
                     <!-- Divider -->
-                    <line x1="170" y1="150" x2="500" y2="150" stroke="rgba(61,74,40,0.08)" stroke-width="1" stroke-dasharray="5 4"/>
+                    <line x1="170" y1="150" x2="500" y2="150" stroke="rgba(59,90,62,0.08)" stroke-width="1" stroke-dasharray="5 4"/>
                     <text x="335" y="163" class="ct" text-anchor="middle" font-size="8" fill="var(--light-gray)" font-style="italic">Unterhalb: wenig Einfluss auf die Entscheidung</text>
 
-                    <!-- 4: Toolkosten (small) -->
-                    <text x="165" y="190" class="ct" text-anchor="end" font-size="9.5" fill="var(--light-gray)">Toolkosten</text>
-                    <rect x="355" y="179" width="15" height="18" fill="var(--neg)" rx="3" opacity="0.25"/>
+                    <!-- 4: Gebäude-Konditionen (small) -->
+                    <text x="165" y="190" class="ct" text-anchor="end" font-size="9.5" fill="var(--light-gray)">Gebäude-Wert</text>
+                    <rect x="358" y="179" width="12" height="18" fill="var(--neg)" rx="3" opacity="0.25"/>
                     <rect x="370" y="179" width="12" height="18" fill="var(--pos)" rx="3" opacity="0.25"/>
 
-                    <!-- 5: Bürokosten (tiny) -->
-                    <text x="165" y="218" class="ct" text-anchor="end" font-size="9.5" fill="var(--light-gray)">Bürokosten</text>
+                    <!-- 5: Transaktionskosten (tiny) -->
+                    <text x="165" y="218" class="ct" text-anchor="end" font-size="9.5" fill="var(--light-gray)">Berater- &amp; Notarkosten</text>
                     <rect x="360" y="207" width="10" height="18" fill="var(--neg)" rx="3" opacity="0.18"/>
                     <rect x="370" y="207" width="8" height="18" fill="var(--pos)" rx="3" opacity="0.18"/>
                 </svg>
@@ -859,8 +860,8 @@
         </div>
 
         <div class="ib" data-a>
-            <div class="ins"><div class="ins-l">Erkenntnis</div><p>„Von fünf Unsicherheiten machen zwei etwa 80 % des Unterschieds. Die Bürokosten – über die Anna am meisten gegrübelt hat – spielen für die Entscheidung kaum eine Rolle."</p></div>
-            <div class="unc"><div class="unc-l">Umgang mit Unsicherheit</div><p>„Wir sagen nicht ‚Vergiss die anderen Faktoren.' Wir sagen: ‚Für diese Entscheidung hängt wenig davon ab.' Das befreit von unnötigem Grübeln und fokussiert die Energie."</p></div>
+            <div class="ins"><div class="ins-l">Erkenntnis</div><p>„Von fünf Unsicherheiten machen zwei rund 80 % des Unterschieds: ob die Aufträge der großen Kunden bleiben – und ob die Kunden auch nach dem Eigentümerwechsel treu bleiben. Worüber Klaus dagegen am meisten gegrübelt hat – was ihn der Verkaufsberater am Ende kostet – ist für den Erlös einer der kleinsten Hebel."</p></div>
+            <div class="unc"><div class="unc-l">Umgang mit Unsicherheit</div><p>„Wir sagen nicht ‚Vergiss die anderen Faktoren.' Wir sagen: ‚Für diese Entscheidung hängt wenig davon ab.' Das befreit von unnötigem Grübeln und fokussiert die Energie auf die zwei, drei Fragen, die zählen."</p></div>
         </div>
     </div>
 </section>
@@ -879,7 +880,7 @@
         <div class="cc" data-a>
             <div class="cc-c cc-c--old">
                 <div class="cc-lbl">Was die meisten tun</div>
-                <p>In einer einzigen Zahl denken: <em>„Das bringt 130.000 €."</em> Aber die Zukunft besteht aus vielen denkbaren Szenarien. Wer nur den einen Wert betrachtet, übersieht, dass es auch ganz anders kommen kann.</p>
+                <p>In einer einzigen Zahl denken: <em>„Der Betrieb ist 800.000 € wert."</em> Aber die Zukunft besteht aus vielen denkbaren Szenarien. Wer nur den einen Wert betrachtet, übersieht, dass es auch ganz anders kommen kann.</p>
             </div>
             <div class="cc-c cc-c--new">
                 <div class="cc-lbl">Was wir machen</div>
@@ -891,47 +892,51 @@
             <div class="vc">
                 <h4>Bandbreite der drei Strategien</h4>
                 <div class="vc-sub">In 9 von 10 Fällen liegt das Ergebnis innerhalb der Spanne. Der Punkt zeigt den wahrscheinlichsten Wert.</div>
-                <!-- Scale 0–250k. x: 180–590 = 410px → 1k=1.64px -->
+                <!-- Scale 0–1 Mio. x: 200–590 = 390px → 1k=0.39px. x(v)=200+v*0.39 -->
                 <svg class="chart" viewBox="0 0 700 175">
                     <!-- Grid lines -->
-                    <line x1="180" y1="140" x2="590" y2="140" stroke="rgba(255,255,255,0.05)"/>
-                    <text x="180" y="156" class="ct" font-size="8" fill="rgba(255,255,255,0.22)" text-anchor="middle">0</text>
-                    <text x="262" y="156" class="ct" font-size="8" fill="rgba(255,255,255,0.22)" text-anchor="middle">50k</text>
-                    <text x="344" y="156" class="ct" font-size="8" fill="rgba(255,255,255,0.22)" text-anchor="middle">100k</text>
-                    <text x="426" y="156" class="ct" font-size="8" fill="rgba(255,255,255,0.22)" text-anchor="middle">150k</text>
-                    <text x="508" y="156" class="ct" font-size="8" fill="rgba(255,255,255,0.22)" text-anchor="middle">200k €</text>
+                    <line x1="200" y1="140" x2="590" y2="140" stroke="rgba(255,255,255,0.05)"/>
+                    <text x="200" y="156" class="ct" font-size="8" fill="rgba(255,255,255,0.22)" text-anchor="middle">0</text>
+                    <text x="297" y="156" class="ct" font-size="8" fill="rgba(255,255,255,0.22)" text-anchor="middle">250k</text>
+                    <text x="395" y="156" class="ct" font-size="8" fill="rgba(255,255,255,0.22)" text-anchor="middle">500k</text>
+                    <text x="492" y="156" class="ct" font-size="8" fill="rgba(255,255,255,0.22)" text-anchor="middle">750k</text>
+                    <text x="590" y="156" class="ct" font-size="8" fill="rgba(255,255,255,0.22)" text-anchor="middle">1 Mio €</text>
 
-                    <line x1="262" y1="12" x2="262" y2="140" stroke="rgba(255,255,255,0.025)"/>
-                    <line x1="344" y1="12" x2="344" y2="140" stroke="rgba(255,255,255,0.025)"/>
-                    <line x1="426" y1="12" x2="426" y2="140" stroke="rgba(255,255,255,0.025)"/>
+                    <line x1="297" y1="12" x2="297" y2="140" stroke="rgba(255,255,255,0.025)"/>
+                    <line x1="395" y1="12" x2="395" y2="140" stroke="rgba(255,255,255,0.025)"/>
+                    <line x1="492" y1="12" x2="492" y2="140" stroke="rgba(255,255,255,0.025)"/>
 
-                    <!-- Premium Solo [65k–120k] EV=95k → x(65)=287, x(120)=377, x(95)=336 -->
-                    <text x="172" y="36" class="ct" text-anchor="end" font-size="10.5" fill="rgba(255,255,255,0.7)" font-weight="500">Premium Solo</text>
-                    <rect x="287" y="25" width="90" height="18" rx="9" fill="rgba(123,175,94,0.2)"/>
-                    <circle cx="336" cy="34" r="6" fill="var(--pos)" stroke="var(--surface-dark)" stroke-width="2"/>
-                    <text x="280" y="37" class="ct" font-size="8.5" fill="rgba(255,255,255,0.3)" text-anchor="end">65k</text>
-                    <text x="384" y="37" class="ct" font-size="8.5" fill="rgba(255,255,255,0.3)" text-anchor="start">120k</text>
+                    <!-- Ziel-Untergrenze 900k → x=551 -->
+                    <line x1="551" y1="18" x2="551" y2="140" stroke="rgba(196,151,58,0.5)" stroke-width="1" stroke-dasharray="4 3"/>
+                    <text x="551" y="12" class="ct" font-size="8" fill="var(--gold-light)" text-anchor="middle" font-weight="600">Ziel 900k</text>
 
-                    <!-- Agentur Light [30k–210k] EV=130k → x(30)=229, x(210)=524, x(130)=393 -->
-                    <text x="172" y="80" class="ct" text-anchor="end" font-size="10.5" fill="rgba(255,255,255,0.7)" font-weight="500">Agentur Light</text>
-                    <rect x="229" y="69" width="295" height="18" rx="9" fill="rgba(59,110,165,0.2)"/>
-                    <circle cx="393" cy="78" r="6" fill="var(--strat-blue)" stroke="var(--surface-dark)" stroke-width="2"/>
-                    <text x="222" y="81" class="ct" font-size="8.5" fill="rgba(255,255,255,0.3)" text-anchor="end">30k</text>
-                    <text x="531" y="81" class="ct" font-size="8.5" fill="rgba(255,255,255,0.3)" text-anchor="start">210k</text>
+                    <!-- Größeres Unternehmen [450k–1.000k] EV=760k → x(450)=376, x(1000)=590, x(760)=496 -->
+                    <text x="190" y="36" class="ct" text-anchor="end" font-size="10.5" fill="rgba(255,255,255,0.7)" font-weight="500">Größeres Unternehmen</text>
+                    <rect x="376" y="25" width="214" height="18" rx="9" fill="rgba(123,175,94,0.2)"/>
+                    <circle cx="496" cy="34" r="6" fill="var(--pos)" stroke="var(--surface-dark)" stroke-width="2"/>
+                    <text x="369" y="37" class="ct" font-size="8.5" fill="rgba(255,255,255,0.3)" text-anchor="end">450k</text>
+                    <text x="597" y="37" class="ct" font-size="8.5" fill="rgba(255,255,255,0.3)" text-anchor="start">1 Mio</text>
 
-                    <!-- Digitales Produkt [50k–175k] EV=110k → x(50)=262, x(175)=467, x(110)=360 -->
-                    <text x="172" y="124" class="ct" text-anchor="end" font-size="10.5" fill="rgba(255,255,255,0.7)" font-weight="500">Digitales Produkt</text>
-                    <rect x="262" y="113" width="205" height="18" rx="9" fill="rgba(200,140,50,0.2)"/>
-                    <circle cx="360" cy="122" r="6" fill="var(--strat-orange)" stroke="var(--surface-dark)" stroke-width="2"/>
-                    <text x="255" y="125" class="ct" font-size="8.5" fill="rgba(255,255,255,0.3)" text-anchor="end">50k</text>
-                    <text x="474" y="125" class="ct" font-size="8.5" fill="rgba(255,255,255,0.3)" text-anchor="start">175k</text>
+                    <!-- Einzelner Käufer [630k–890k] EV=785k → x(630)=446, x(890)=547, x(785)=506 -->
+                    <text x="190" y="80" class="ct" text-anchor="end" font-size="10.5" fill="rgba(255,255,255,0.7)" font-weight="500">Einzelner Käufer</text>
+                    <rect x="446" y="69" width="101" height="18" rx="9" fill="rgba(59,110,165,0.2)"/>
+                    <circle cx="506" cy="78" r="6" fill="var(--strat-blue)" stroke="var(--surface-dark)" stroke-width="2"/>
+                    <text x="439" y="81" class="ct" font-size="8.5" fill="rgba(255,255,255,0.3)" text-anchor="end">630k</text>
+                    <text x="554" y="81" class="ct" font-size="8.5" fill="rgba(255,255,255,0.3)" text-anchor="start">890k</text>
+
+                    <!-- Eigener Mitarbeiter [330k–820k] EV=620k → x(330)=329, x(820)=520, x(620)=442 -->
+                    <text x="190" y="124" class="ct" text-anchor="end" font-size="10.5" fill="rgba(255,255,255,0.7)" font-weight="500">Eigener Mitarbeiter</text>
+                    <rect x="329" y="113" width="191" height="18" rx="9" fill="rgba(200,140,50,0.2)"/>
+                    <circle cx="442" cy="122" r="6" fill="var(--strat-orange)" stroke="var(--surface-dark)" stroke-width="2"/>
+                    <text x="322" y="125" class="ct" font-size="8.5" fill="rgba(255,255,255,0.3)" text-anchor="end">330k</text>
+                    <text x="527" y="125" class="ct" font-size="8.5" fill="rgba(255,255,255,0.3)" text-anchor="start">820k</text>
                 </svg>
             </div>
         </div>
 
         <div class="ib" data-a>
-            <div class="ins"><div class="ins-l">Erkenntnis</div><p>„Agentur Light hat das höchste Potenzial – aber im ungünstigen Fall liegt sie deutlich unter dem Solo-Weg. Premium Solo ist am berechenbarsten. Was besser passt, hängt davon ab, wie viel Schwankung Anna aushalten kann und will."</p></div>
-            <div class="unc"><div class="unc-l">Umgang mit Unsicherheit</div><p>„Wir können die Unsicherheit nicht wegrechnen – aber sichtbar machen. Wer die Bandbreite kennt, entscheidet bewusst. Beides – das Risiko eingehen oder die Berechenbarkeit wählen – kann die richtige Entscheidung sein."</p></div>
+            <div class="ins"><div class="ins-l">Erkenntnis</div><p>„Drei Wege, drei Risikoprofile. Der Verkauf an ein größeres Unternehmen kann am meisten bringen – es ist der einzige Weg, der die angepeilten 900.000 € überhaupt knacken kann. Aber die Spanne ist riesig: Es hängt daran, ob sich ein Käufer findet, der die Bedingungen – Arbeitsplätze, Standort – akzeptiert und die Altlasten-Prüfung übersteht. Findet er sich nicht, bleibt nur ein deutlich schwächerer Deal. Ein einzelner Käufer ist viel berechenbarer, zahlt aber weniger, weil eine Einzelperson nur begrenzt finanzieren kann – er kommt knapp nicht an die 900.000 € heran. Und der emotional naheliegende Weg über einen Mitarbeiter bringt am wenigsten und steht am längsten im Risiko, weil ein großer Teil des Geldes erst über Jahre fließt."</p></div>
+            <div class="unc"><div class="unc-l">Umgang mit Unsicherheit</div><p>„Wir können die Unsicherheit nicht wegrechnen – aber sichtbar machen. Wer die Bandbreite kennt, entscheidet bewusst. Manchmal ist der berechenbarere Weg mit etwas weniger Potenzial die klügere Wahl – gerade wenn es um die eigene Altersvorsorge geht."</p></div>
         </div>
     </div>
 </section>
@@ -965,69 +970,71 @@
                     <div class="oc-icon oc-icon--info"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
                     <h5>Lohnt sich mehr Information?</h5>
                     <p>Wir berechnen den Wert einer Information – in Euro.</p>
-                    <div class="oc-ex">„Ein 3-monatiges Testprojekt mit einem freien Mitarbeiter kostet ~5.000 €. Unsere Analyse zeigt: Es verändert die Entscheidung in 40 % der Fälle und ist bis zu 12.000 € wert."</div>
+                    <div class="oc-ex">„Ein Bodengutachten (mögliche Altlasten aus alten Kühlmitteln) kostet rund 4.000 €. Es räumt ein Risiko aus dem Weg, das beim Verkauf schnell einen Abschlag von über 100.000 € bedeuten kann – und nimmt dem Käufer die größte Sorge bei seiner Prüfung."</div>
                 </div>
                 <div class="oc">
                     <!-- Target/crosshair icon -->
                     <div class="oc-icon oc-icon--ctrl"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg></div>
                     <h5>Was kannst du aktiv beeinflussen?</h5>
                     <p>Unsicherheiten in Planungsgrößen verwandeln.</p>
-                    <div class="oc-ex">„2 verbindliche Kundenzusagen von Bestandskunden einholen, bevor du einstellst – aus Unsicherheit wird Planungssicherheit."</div>
+                    <div class="oc-ex">„Den Betrieb unabhängig vom Inhaber machen: Entscheidungen, Kundenbeziehungen und Wissen aufs Team verteilen, Prozesse und Verantwortlichkeiten festschreiben. Für jeden Käufer die größte Sorge – läuft es ohne den Chef? – und damit ein Preisabschlag, der so wegfällt."</div>
                 </div>
                 <div class="oc">
                     <!-- Puzzle/combine icon -->
                     <div class="oc-icon oc-icon--mix"><svg viewBox="0 0 24 24"><path d="M13 2 L18 2 C19.1 2 20 2.9 20 4 L20 9"/><path d="M4 13 L4 18 C4 19.1 4.9 20 6 20 L11 20"/><path d="M13 20 L18 20 C19.1 20 20 19.1 20 18 L20 13"/><path d="M4 11 L4 6 C4 4.9 4.9 4 6 4 L11 4"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg></div>
                     <h5>Lässt sich das Beste kombinieren?</h5>
-                    <p>Stärkste Elemente verschiedener Strategien verbinden.</p>
-                    <div class="oc-ex">„Premium-Preise aus ‚Solo' + gezielte Einstellung aus ‚Agentur' + digitales Nebenprodukt aus ‚Digitales Produkt'."</div>
+                    <p>Aus den Erkenntnissen den stärksten Gesamtweg formen.</p>
+                    <div class="oc-ex">„Sich nicht früh auf einen Käufer festlegen: erst alle Risiken ausräumen, dann mehrere Interessenten gegeneinander antreten lassen statt das erstbeste Angebot zu nehmen – so zahlt der beste am oberen Ende der Spanne."</div>
                 </div>
                 <div class="oc">
                     <!-- Calendar/timing icon -->
                     <div class="oc-icon oc-icon--time"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="10 14 12 16 16 12"/></svg></div>
                     <h5>Stimmt das Timing?</h5>
                     <p>Oft ist nicht was, sondern wann entscheidend.</p>
-                    <div class="oc-ex">„Erst Preise erhöhen und validieren, dann mit bewiesener Marge einstellen – statt beides gleichzeitig."</div>
+                    <div class="oc-ex">„Den Betrieb dann zeigen, wenn die Auftragsbücher voll sind – nicht in der ruhigen Jahreszeit. Und erst klären, ob ein Mitarbeiter überhaupt übernehmen will, bevor man den Markt sondiert."</div>
                 </div>
             </div>
 
-            <!-- DERIVATION: How Boutique Studio emerges from analysis -->
+            <!-- DERIVATION: How "Vorbereiteter Verkauf" emerges from analysis -->
             <div class="deriv" data-a>
                 <h4>Von der Analyse zur neuen Strategie</h4>
-                <p>Keine der drei Ausgangsoptionen war optimal. Aber die Analyse zeigt genau, welche Stärken sich kombinieren lassen – und wann welcher Schritt sinnvoll ist:</p>
+                <p>Keine der drei Optionen ist für sich die Antwort. Die tiefere Analyse deckt den eigentlichen Hebel auf – und der liegt nicht darin, <em>an wen</em> verkauft wird, sondern <em>wie</em>:</p>
 
                 <div class="deriv-row">
-                    <span class="deriv-from t-g" style="background:rgba(76,140,74,0.1);color:#3a6e38;font-size:0.74rem;padding:3px 9px;border-radius:5px;font-weight:500;">Premium Solo</span>
+                    <span class="deriv-from t-g" style="background:rgba(76,140,74,0.1);color:#3a6e38;font-size:0.74rem;padding:3px 9px;border-radius:5px;font-weight:500;">Größeres Unternehmen</span>
                     <span class="deriv-arrow">→</span>
-                    <span class="deriv-to">Hohe Preise behalten. Die Sensitivitätsanalyse zeigt: Preisniveau hat wenig Schwankung und stabilisiert das Ergebnis.</span>
+                    <span class="deriv-to">Der Preis, den ein Käufer bietet, sinkt mit jedem Risiko, das er sieht. Den höchsten Preis hebt nicht die Verhandlung, sondern das Ausräumen dieser Risiken vor dem Verkauf.</span>
                 </div>
                 <div class="deriv-row">
-                    <span class="deriv-from t-b" style="background:rgba(59,110,165,0.1);color:#2d5f8a;font-size:0.74rem;padding:3px 9px;border-radius:5px;font-weight:500;">Agentur Light</span>
+                    <span class="deriv-from t-b" style="background:rgba(59,110,165,0.1);color:#2d5f8a;font-size:0.74rem;padding:3px 9px;border-radius:5px;font-weight:500;">Einzelkäufer</span>
                     <span class="deriv-arrow">→</span>
-                    <span class="deriv-to">Kapazität ausbauen – aber mit 1 erfahrenen Partner statt 2 Juniors. Das eliminiert den größten Unsicherheitsfaktor.</span>
+                    <span class="deriv-to">Ein einzelner Käufer zahlt nie das obere Ende – ihm fehlt die Finanzkraft. Dorthin kommt nur, wer mehrere Interessenten in Konkurrenz bringt, statt das erstbeste Angebot zu nehmen.</span>
                 </div>
                 <div class="deriv-row">
-                    <span class="deriv-from t-o" style="background:rgba(200,140,50,0.1);color:#8a6420;font-size:0.74rem;padding:3px 9px;border-radius:5px;font-weight:500;">Digitales Produkt</span>
+                    <span class="deriv-from t-o" style="background:rgba(200,140,50,0.1);color:#8a6420;font-size:0.74rem;padding:3px 9px;border-radius:5px;font-weight:500;">Eigener Mitarbeiter</span>
                     <span class="deriv-arrow">→</span>
-                    <span class="deriv-to">UX-Audit als schlankes digitales Produkt – nicht als Hauptgeschäft, sondern als zusätzliche Erlösquelle.</span>
+                    <span class="deriv-to">Der Mitarbeiter ist nicht der Käufer, sondern der Schlüssel zum Wert: An ihm hängen die Kundenbeziehungen. Aufs Team übertragen, sinkt die Abhängigkeit vom Inhaber – und der größte Preisabschlag fällt weg.</span>
                 </div>
 
                 <div class="hyb">
                     <div class="pill pill--accent">Ergebnis der Optimierung</div>
-                    <h5>Neue Strategie: „Boutique Studio"</h5>
-                    <p>Diese Strategie war in keiner der ursprünglichen Optionen enthalten. Sie entstand, weil die Analyse sichtbar gemacht hat, welche Stärken zusammenpassen – und welche Schwächen sich gegenseitig aufheben.</p>
+                    <h5>Neue Strategie: „Vorbereiteter Verkauf"</h5>
+                    <p>Die Analyse dreht die Frage um: nicht ‚an wen verkaufen?', sondern ‚wie sorge ich dafür, dass ein Käufer den Höchstpreis bietet?'. Die Antwort: dem Käufer vor dem Verkauf jeden Grund nehmen, abzuwerten. Den Betrieb unabhängig vom Inhaber machen, klare Governance und dokumentierte Prozesse schaffen, die wichtigsten Risiken kennen und aktiv steuern – und erst dann, zum stärksten Zeitpunkt, mehrere Interessenten in Konkurrenz bringen. Je weniger Risiko ein Käufer sieht, desto höher sein Angebot.</p>
                     <div class="ht">
-                        <span class="ht-g">Premium-Preise beibehalten</span>
-                        <span class="ht-b">1 Senior statt 2 Juniors</span>
-                        <span class="ht-o">UX-Audit als digitales Produkt</span>
-                        <span class="ht-g">Feste Aufträge vorher sichern</span>
-                        <span class="ht-b">Preiserhöhung vor Einstellung</span>
+                        <span class="ht-o">Inhaber-Abhängigkeit reduzieren</span>
+                        <span class="ht-o">Kundenbeziehungen aufs Team übertragen</span>
+                        <span class="ht-g">Governance & klare Verantwortlichkeiten</span>
+                        <span class="ht-g">Prozesse dokumentieren & standardisieren</span>
+                        <span class="ht-b">Risikomanagement einführen, Top-Risiken kennen</span>
+                        <span class="ht-g">Altlasten vorab klären</span>
+                        <span class="ht-b">Mehrere Interessenten zum starken Zeitpunkt</span>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="ib" data-a>
-            <div class="ins"><div class="ins-l">Erkenntnis</div><p>„Ein 3-monatiger Testlauf mit einem freien Mitarbeiter senkt das Risiko dramatisch. Zwei verbindliche Kundenzusagen verwandeln den größten Unsicherheitsfaktor. Und das Timing – erst Preise erhöhen, dann das Team aufbauen – macht aus einem riskanten Sprung einen kontrollierten Übergang."</p></div>
+            <div class="ins"><div class="ins-l">Erkenntnis</div><p>„Ein Gutachten räumt ein Risiko aus, für das ein Käufer sonst abwertet. Den Betrieb unabhängig vom Inhaber zu machen – klare Prozesse, gemanagte Risiken, ein Team das trägt – hebt den Preis stärker als jede Verhandlung am Tisch. Und der richtige Zeitpunkt, volle Auftragsbücher, zeigt den Betrieb von seiner besten Seite. Aus Hoffen auf ein gutes Angebot wird aktives Steuern auf den Höchstpreis."</p></div>
             <div class="unc"><div class="unc-l">Umgang mit Unsicherheit</div><p>„Unsicherheit ist kein Naturgesetz. Manche lässt sich durch Information beseitigen, andere durch Handeln verringern, wieder andere durch klügeres Timing entschärfen. Zu wissen, bei welcher sich welcher Hebel lohnt – das ist der Unterschied zwischen Hoffen und Steuern."</p></div>
         </div>
 
@@ -1042,9 +1049,9 @@
                     <div>
                         <div class="rc-logo">INFINITYPROOF</div>
                         <div class="rc-title">Strategische Entscheidungsanalyse</div>
-                        <div class="rc-sub">Anna Weber – Wachstumsstrategie</div>
+                        <div class="rc-sub">Klaus Berger – Nachfolgestrategie</div>
                     </div>
-                    <div class="rc-meta">Vertraulich · März 2026<br>Erstellt für Anna Weber</div>
+                    <div class="rc-meta">Vertraulich · Mai 2026<br>Erstellt für Klaus Berger</div>
                 </div>
 
                 <!-- Inner pages -->
@@ -1052,7 +1059,7 @@
                     <div class="rpt-pg">
                         <div class="rpt-pg-lbl">Kapitel 1</div>
                         <div class="rpt-pg-h">Kernfrage & Empfehlung</div>
-                        <div class="rpt-pg-quote"><div class="rpt-pg-quote-txt">„Boutique Studio" – Kombination aus Premium-Preisen, einem erfahrenen Partner und digitalem Zusatzprodukt.</div></div>
+                        <div class="rpt-pg-quote"><div class="rpt-pg-quote-txt">„Vorbereiteter Verkauf" – Risiken vorab klären, Kundenbeziehungen vom Inhaber lösen, dann zum stärksten Zeitpunkt an mehrere Interessenten verkaufen.</div></div>
                         <div class="rpt-pg-lines" style="margin-top:0.3rem"><div class="rpt-pg-line" style="width:100%"></div><div class="rpt-pg-line" style="width:85%"></div><div class="rpt-pg-line" style="width:60%"></div></div>
                     </div>
                     <div class="rpt-pg">
@@ -1069,14 +1076,14 @@
                     <div class="rpt-pg">
                         <div class="rpt-pg-lbl">Kapitel 5</div>
                         <div class="rpt-pg-h">Nächste Schritte</div>
-                        <div class="rpt-pg-bullet"><div class="rpt-pg-dot"></div><span class="rpt-pg-txt">Preiserhöhung testen (Monat 1–2)</span></div>
-                        <div class="rpt-pg-bullet"><div class="rpt-pg-dot"></div><span class="rpt-pg-txt">Testprojekt mit Senior-Partner (Monat 3)</span></div>
-                        <div class="rpt-pg-bullet"><div class="rpt-pg-dot"></div><span class="rpt-pg-txt">Kundenzusagen einholen (Monat 4)</span></div>
+                        <div class="rpt-pg-bullet"><div class="rpt-pg-dot"></div><span class="rpt-pg-txt">Betrieb vom Inhaber lösen: Prozesse & Governance</span></div>
+                        <div class="rpt-pg-bullet"><div class="rpt-pg-dot"></div><span class="rpt-pg-txt">Top-Risiken erfassen, Altlast-Gutachten</span></div>
+                        <div class="rpt-pg-bullet"><div class="rpt-pg-dot"></div><span class="rpt-pg-txt">Unternehmenswert mit dem Steuerberater festlegen</span></div>
                     </div>
                 </div>
             </div>
 
-            <p>Kein 80-Folien-Deck – sondern ein klares Dokument mit nachvollziehbarer Logik, das du deiner Steuerberaterin, deinem Sparringspartner oder deiner Bank in die Hand drücken kannst.</p>
+            <p>Kein 80-Folien-Deck – sondern ein klares Dokument mit nachvollziehbarer Logik, das du deinem Steuerberater, deiner Familie oder deiner Bank in die Hand drücken kannst.</p>
         </div>
     </div>
 </section>
@@ -1108,7 +1115,7 @@
 // Nav shadow on scroll
 window.addEventListener('scroll', () => {
     const nav = document.querySelector('.site-nav');
-    nav.style.boxShadow = window.scrollY > 50 ? '0 2px 20px rgba(61,74,40,0.08)' : 'none';
+    nav.style.boxShadow = window.scrollY > 50 ? '0 2px 20px rgba(59,90,62,0.08)' : 'none';
 });
 
 // Intersection Observer for animations
